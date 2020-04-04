@@ -62,7 +62,7 @@ class ResPartnerInherit(models.Model):
     def get_default_company(self):
         raise UserWarning(self.env.company)
         return self.env.company_id.id
-    x_studio_current_company_2 = fields.Many2one('res.partner', compute=get_default_company)
+    x_studio_current_company_2 = fields.Many2one('res.company', compute=get_default_company)
 
     
 
