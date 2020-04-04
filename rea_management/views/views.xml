@@ -69,7 +69,7 @@
                                 <div name="tags"/>
                                 <ul>
                                     <li>Etat d'aujourd'hui: 
-                                    <t t-if="record.today_state == 'l' "><span style="color:green;"><b><field name="today_state" /></b></span></t>
+                                    <span style="color:green;"><b><field name="today_state" /></b></span>
                                     <t t-if="record.today_state == 'o'"><span style="color:red;"><b><field name="today_state" /></b></span></t>
                                     <t t-if="record.today_state == 'r'"><span style="color:black;"><b><field name="today_state" /></b></span></t>
                                     </li>
