@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+import datetime
 
 class SaleOrderInherit(models.Model):
     _inherit="sale.order"
@@ -23,8 +24,14 @@ class ProductTemplateInherit(models.Model):
         ('r', 'Reservé'),
        
     ],compute="_get_daily_state", string="Etat d'aujourd'hui")
-    next_free_dtae = fields.Date('Date de Disponibilité')
+    next_free_dtae = fields.Char('Date de Disponibilité')
 
     def _get_daily_state(self):
-        self.today_state = 'o'
+        self.today_state = 'l'
+        self.next_free_dtae = datetime.datetime.strftime(datetime.datetime.today(), "%d/%m/%Y")
         return True
+
+class ResCompanyInherit(models.Model):
+    _inherit="res.company"
+
+    
