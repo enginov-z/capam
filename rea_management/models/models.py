@@ -14,6 +14,14 @@ class SaleOrderInherit(models.Model):
         ('returned', 'Libre'),
         ('cancel', 'Annulé'),
     ], string="Etat des affectations", compute='_compute_rental_status', store=True)
+    state = fields.Selection([
+        ('draft', 'Bruillon'),
+        ('sent', 'Quotation Sent'),
+        ('pickup', 'Reservé'),
+        ('return', 'Picked-up'),
+        ('returned', 'Libre'),
+        ('cancel', 'Annulé'),
+    ], string="Etat des affectations", compute='_compute_rental_status', store=True)
 
 class ProductTemplateInherit(models.Model):
     _inherit="product.template"
