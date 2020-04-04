@@ -17,12 +17,12 @@ class SaleOrderInherit(models.Model):
 class ProductTemplateInherit(models.Model):
     _inherit="product.template"
 
-    today_state = fields.Selection(selection="[
+    today_state = fields.Selection(selection=[
         ('l', 'Libre'),
         ('o', 'Occupé'),
         ('r', 'Reservé'),
        
-    ],"compute="_get_daily_state", string="Etat d'aujourd'hui")
+    ],compute="_get_daily_state", string="Etat d'aujourd'hui")
     next_free_dtae = fields.Date('Date de Disponibilité')
 
     def _get_daily_state(self):
