@@ -5,9 +5,9 @@ from odoo import models, fields, api
 class SaleOrderInherit(models.Model):
     _inherit="sale.order"
 
-    rental_status = fields.Selection([
+    rental_status = fields.Selection(selection=[
         ('free', 'Libre'),
         ('occupied', 'Occupé'),
         ('booked', 'Reservé'),
 
-    ], string="Etat des affectations", compute='_compute_rental_status', store=True)
+    ], string="Etat des affectations")

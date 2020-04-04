@@ -1,19 +1,20 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="my_module.list">
-      <field name="name">my_module list</field>
-      <field name="model">my_module.my_module</field>
+ 
+    <record model="ir.ui.view" id="rea_management.inherit_search_view">
+      <field name="name">search view affectations inherit</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale_renting.rental_order_view_search" />
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
+        <xpath position="//searchpanel" expr="replace">
+        <searchpanel>
+              <field name="rental_status" icon="fa-retweet"/>
+              <field name="invoice_status" icon="fa-retweet"/>
+          </searchpanel>
+        </xpath>
       </field>
     </record>
-    -->
 
     <!-- actions opening views on models -->
     <!--
