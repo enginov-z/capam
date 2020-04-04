@@ -29,19 +29,19 @@ class ProductTemplateInherit(models.Model):
 
     def _get_daily_state(self):
         #get actual state
-        self.ensure_one()
-        pickup_this_date = self.env['sale.order.line'].search(
-            [('product_tmpl_id','=',self.id)
-            ,('is_rental','=',True)
-            ,('pickup_date','<=',datetime.datetime.today())
-            ,('return_date','>=',datetime.datetime.today())
-            ])
-        if len(pickup_this_date > 0 ):
-            self.today_state = 'o'
-            self.next_free_dtae = pickup_this_date.return_date
-        else:
-            self.today_state = 'l'
-            self.next_free_dtae = datetime.datetime.strftime(datetime.datetime.today(), "%d/%m/%Y")
+        for x in self
+            pickup_this_date = self.env['sale.order.line'].search(
+                [('product_tmpl_id','=',x.id)
+                ,('is_rental','=',True)
+                ,('pickup_date','<=',datetime.datetime.today())
+                ,('return_date','>=',datetime.datetime.today())
+                ])
+            if len(pickup_this_date > 0 ):
+                x.today_state = 'o'
+                x.next_free_dtae = pickup_this_date.return_date
+            else:
+                x.today_state = 'l'
+                x.next_free_dtae = datetime.datetime.strftime(datetime.datetime.today(), "%d/%m/%Y")
         return True
 
     def open_create_affectation(self):
