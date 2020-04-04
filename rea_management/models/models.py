@@ -68,7 +68,7 @@ class ResPartnerInherit(models.Model):
             })
         else:
             self.update({
-                'x_studio_current_company_bool' : True
+                'x_studio_current_company_bool' : False
             })
     x_studio_current_company_2 = fields.Many2one('res.company', compute=get_default_company)
 
