@@ -60,7 +60,10 @@ class ProductTemplateInherit(models.Model):
 class ResPartnerInherit(models.Model):
     _inherit="res.partner"
 
-    x_studio_current_company_2 = fields.Char('bla bla', default="bla bla")
+    x_studio_current_company_2 = fields.Many2one('res.partner', compute="get_default_company", store=True)
+
+    def get_default_company(self):
+        return self.env.company_id.id
 
     @api.onchange('x_studio_date_de_naissance')
     def set_age(self):
