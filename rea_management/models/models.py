@@ -60,8 +60,9 @@ class ProductTemplateInherit(models.Model):
 class ResPartnerInherit(models.Model):
     _inherit="res.partner"
 
-    @api.depends('x_studio_date_de_naissance')
+    @api.onchange('x_studio_date_de_naissance')
     def set_age(self):
+        raise UserWarning('i work ')
         return 20
 
 
