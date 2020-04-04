@@ -59,6 +59,7 @@
                                 <ul>
                                     <li>Etat d'aujourd'hui: <field name="today_state" /></li>
                                      <li>Date de Disponibilité: <field name="next_free_dtae" /></li>
+                                     <field name="lst_price" invisible="1" />
                                 </ul>
                                 <div name="tags"/>
                             </div>
