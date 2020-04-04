@@ -13,7 +13,7 @@ class SaleOrderInherit(models.Model):
         ('return', 'Picked-up'),
         ('returned', 'Libre'),
         ('cancel', 'Annulé'),
-    ], string="Etat des affectations", compute='_compute_rental_status', store=True)
+    ], string="Etat des affectations")
     state = fields.Selection(selection=[
         ('draft', 'Bruillon'),
         ('sent', 'Quotation Sent'),
@@ -21,7 +21,7 @@ class SaleOrderInherit(models.Model):
         ('return', 'Picked-up'),
         ('returned', 'Libre'),
         ('cancel', 'Annulé'),
-    ], string="Etat des affectations", compute='_compute_rental_status', store=True)
+    ], string="Etat des affectations")
 
 class ProductTemplateInherit(models.Model):
     _inherit="product.template"
