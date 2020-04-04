@@ -63,6 +63,7 @@ class ResPartnerInherit(models.Model):
     x_studio_current_company_2 = fields.Many2one('res.partner', compute="get_default_company", store=True)
 
     def get_default_company(self):
+        raise UserWarning(self.env.company_id.id)
         return self.env.company_id.id
 
     @api.onchange('x_studio_date_de_naissance')
