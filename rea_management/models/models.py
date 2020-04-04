@@ -62,7 +62,7 @@ class ResPartnerInherit(models.Model):
 
     def get_default_company(self):
         self.x_studio_current_company_2 = self.env.company.id
-        if self.company_name.id == self.x_studio_current_company_2.id:
+        if self.company_name == self.x_studio_current_company_2.name:
             self.update({
                 'x_studio_current_company_bool' : True
             })
