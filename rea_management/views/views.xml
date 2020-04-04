@@ -22,7 +22,7 @@
       <field name="name">sake view affectations inherit</field>
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form" />
-      <field name="sequence">10000</field>
+      <field name="priority">10000</field>
       <field name="arch" type="xml">
        
         <xpath expr="//button[@name='preview_sale_order']" position="replace">
