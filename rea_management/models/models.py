@@ -10,7 +10,7 @@ class SaleOrderInherit(models.Model):
         ('draft', 'Brouillon'),
         ('sent', 'A Confirmer'),
         ('pickup', 'Reservé'),
-        ('return', 'Picked-up'),
+        ('return', 'A retourné'),
         ('returned', 'Libre'),
         ('cancel', 'Annulé'),
     ], string="Etat des affectations")
