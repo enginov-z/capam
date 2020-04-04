@@ -36,10 +36,14 @@ class Departement(models.Model):
 
     name = fields.Char('Nom')
 
-class Departement(models.Model):
+class zone(models.Model):
     _name="rea.zone"
 
     name = fields.Char('Nom')
 
+class ResCompanyInherit(models.Model):
+    _inherit="res.company"
 
+    departement = fields.Many2one('rea.departement', string="Departement")
+    zone = fields.Many2one('rea.zone',string="Zone")
     
