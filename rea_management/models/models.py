@@ -62,7 +62,8 @@ class ResPartnerInherit(models.Model):
 
     @api.onchange('x_studio_date_de_naissance')
     def set_age(self):
-        self.x_studio_age_1 = int((datetime.datetime.today().date() - self.x_studio_date_de_naissance).days / 365)
+        if self.x_studio_date_de_naissance:
+            self.x_studio_age_1 = int((datetime.datetime.today().date() - self.x_studio_date_de_naissance).days / 365)
 
 
 
