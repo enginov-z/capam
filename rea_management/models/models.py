@@ -62,7 +62,9 @@ class ResPartnerInherit(models.Model):
 
     def get_default_company(self):
         self.x_studio_current_company_2 = self.env.company.id
-        
+        self.update({
+            'x_studio_current_company_temp' : self.env.company.id
+        })
     x_studio_current_company_2 = fields.Many2one('res.company', compute=get_default_company)
 
     
