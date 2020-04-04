@@ -32,6 +32,7 @@ class ProductTemplateInherit(models.Model):
         return True
 
     def open_create_affectation(self):
+        raise UserWarning('Reserver')
         return True
 
 

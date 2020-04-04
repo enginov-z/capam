@@ -100,7 +100,7 @@
                                      <li>Date de Disponibilité: <b><field name="next_free_dtae" /></b></li>
                                      <field name="lst_price" invisible="1" />
                                 </ul>
-                                <button class="btn btn-info" type="object" string="Reserver" name="open_create_affectation" />
+                                <button class="btn btn-info" type="object"  name="open_create_affectation" >Reserver</button>
                                 <div name="tags"/>
                             </div>
                         </div>
