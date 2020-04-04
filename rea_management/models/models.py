@@ -57,18 +57,7 @@ class ProductTemplateInherit(models.Model):
             
         }
 
-class ResPartnerInherit(models.Model):
-    _inherit="res.partner"
 
-    birthday = fields.Date('Date de naissance')
-    age = fields.Integer('Age')
-
-    @api.depends('birthday')
-    def _set_age(self):
-        age = int((datetime.datetime.today() - self.birthday) / 365)
-        self.update({
-            'age': age
-        })
 
 
 
