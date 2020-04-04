@@ -9,8 +9,8 @@
       <field name="arch" type="xml">
         <xpath expr="//searchpanel" position="replace">
         <searchpanel>
-              <field name="rental_status" icon="fa-retweet"/>
-              <field name="invoice_status" icon="fa-retweet"/>
+              <field name="x_rental_status" icon="fa-retweet"/>
+           <!--  <field name="invoice_status" icon="fa-retweet"/> -->
           </searchpanel>
         </xpath>
       </field>

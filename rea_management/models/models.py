@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class SaleOrderInherit(models.Model):
     _inherit="sale.order"
 
-    rental_status = fields.Selection(selection=[
+    x_rental_status = fields.Selection(selection=[
         ('free', 'Libre'),
         ('occupied', 'Occupé'),
         ('booked', 'Reservé'),
