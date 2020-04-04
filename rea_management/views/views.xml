@@ -40,17 +40,10 @@
       <field name="inherit_id" ref="product.product_template_kanban_view" />
       <field name="arch" type="xml">
        
-        <xpath expr="//field[@name='lst_price']" position="raplace">
-       
-                            
-                                    <field name="today_state" />
-                                     <!--<li>Date de Disponibilité: <field name="next_free_dtae" /></li>-->
-                                
-                          
-                       
-        
-              
-        </xpath>
+      
+         <field name="lst_price" position="replace">
+                <field name="today_state" />
+            </field>
       </field>
     </record>
 
