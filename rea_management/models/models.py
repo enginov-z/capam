@@ -26,5 +26,5 @@ class ProductTemplateInherit(models.Model):
     next_free_dtae = fields.Date('Date de Disponibilité')
 
     def _get_daily_state(self):
-        self.today_state = 'l'
+        self.today_state = 'o'
         return True
