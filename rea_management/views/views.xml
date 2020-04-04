@@ -35,8 +35,7 @@
                                         <field name="city" placeholder="City" class="o_address_city"/>
                                         <field name="zip" placeholder="ZIP" class="o_address_zip"/>
 
-                                        <field name="departement" placeholder="Departement" class="o_address_city"/>
-                                        <field name="zone" placeholder="Zone" class="o_address_zip"/>
+                                        
 
                                         <field name="state_id" class="o_address_state" string="Region" placeholder="Region" options="{&quot;no_open&quot;: True}"/>
           
