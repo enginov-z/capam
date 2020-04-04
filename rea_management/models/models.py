@@ -31,14 +31,9 @@ class ProductTemplateInherit(models.Model):
         self.next_free_dtae = datetime.datetime.strftime(datetime.datetime.today(), "%d/%m/%Y")
         return True
 
-class Departement(models.Model):
-    _name="departement"
+    def open_create_affectation(self):
+        return True
 
-    name = fields.Char('Nom')
 
-class zone(models.Model):
-    _name="zone"
-
-    name = fields.Char('Nom')
 
 
