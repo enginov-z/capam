@@ -2,19 +2,7 @@
   <data>
     <!-- explicit list view definition -->
  
-    <record model="ir.ui.view" id="rea_management.inherit_search_view">
-      <field name="name">search view affectations inherit</field>
-      <field name="model">sale.order</field>
-      <field name="inherit_id" ref="sale_renting.rental_order_view_search" />
-      <field name="arch" type="xml">
-        <xpath expr="//searchpanel" position="replace">
-        <searchpanel>
-              <field name="x_rental_status" icon="fa-retweet"/>
-           <!--  <field name="invoice_status" icon="fa-retweet"/> -->
-          </searchpanel>
-        </xpath>
-      </field>
-    </record>
+   
     <record model="ir.ui.view" id="rea_management.inherit_sale_view">
       <field name="name">sake view affectations inherit</field>
       <field name="model">sale.order</field>
