@@ -32,13 +32,18 @@ class ProductTemplateInherit(models.Model):
         return True
 
 class Departement(models.Model):
-    _name="rea.departement"
+    _name="departement"
 
     name = fields.Char('Nom')
 
 class zone(models.Model):
-    _name="rea.zone"
+    _name="zone"
 
     name = fields.Char('Nom')
 
+class ResCompanyInherit(models.Model):
+    _inherit="res.company"
+
+    departement = fields.Many2one('departement', string="Departement")
+    zone = fields.Many2one('zone',string="Zone")
     
