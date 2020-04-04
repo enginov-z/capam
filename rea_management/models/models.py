@@ -6,7 +6,7 @@ import datetime
 class SaleOrderInherit(models.Model):
     _inherit="sale.order"
 
-    rental_status = fields.Selection([
+    rental_status = fields.Selection(selection=[
         ('draft', 'Bruillon'),
         ('sent', 'Quotation Sent'),
         ('pickup', 'Reservé'),
@@ -14,7 +14,7 @@ class SaleOrderInherit(models.Model):
         ('returned', 'Libre'),
         ('cancel', 'Annulé'),
     ], string="Etat des affectations", compute='_compute_rental_status', store=True)
-    state = fields.Selection([
+    state = fields.Selection(selection=[
         ('draft', 'Bruillon'),
         ('sent', 'Quotation Sent'),
         ('pickup', 'Reservé'),
