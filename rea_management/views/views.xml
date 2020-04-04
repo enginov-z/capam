@@ -1,17 +1,7 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
- <record model="ir.ui.view" id="rea_management.inherit_sale_prim_view">
-      <field name="name">sake search affectations inherit</field>
-      <field name="model">sale.order</field>
-      <field name="inherit_id" ref="sale_renting.rental_order_primary_form_view" />
-      <field name="arch" type="xml">
-      
-      <xpath expr="//attribute[@name='domain']" position="replace">
-        <attribute name="domain">['|', ('rent_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]</attribute>
-      </xpath>
-      </field>
-      </record>
+ 
    <record model="ir.ui.view" id="rea_management.inherit_sale_search_view">
       <field name="name">sake search affectations inherit</field>
       <field name="model">sale.order</field>
@@ -32,6 +22,7 @@
       <field name="name">sake view affectations inherit</field>
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form" />
+      <field name="sequence">10000</field>
       <field name="arch" type="xml">
        
         <xpath expr="//button[@name='preview_sale_order']" position="replace">
@@ -142,11 +133,33 @@
                                     <field name="product_updatable" invisible="1"/>
                                     <field name="product_id"
                                      attrs="{'readonly': [('product_updatable', '=', False)],'required': [('display_type', '=', False)],                                         }" 
-                                     options="{'no_open': True}" 
+                                     options="{'no_open': True,'rent':True}" 
                                      force_save="1" 
-                                     context="{ 'partner_id': parent.partner_id,'quantity': product_uom_qty,'pricelist': parent.pricelist_id,                                             'uom':product_uom,                                             'company_id': parent.company_id,                                             'default_lst_price': price_unit,                                             'default_description_sale': name                                         }" 
+                                     context="{
+                      'partner_id': parent.partner_id,
+                      'quantity': product_uom_qty,
+                      'pricelist': parent.pricelist_id,
+                      'uom':product_uom,
+                      'company_id': parent.company_id,
+                      'default_lst_price': price_unit,
+                      'default_description_sale': name,
+                      'default_rent_ok': 1,
+                      'rental_products': True,
+                  }" 
                                      domain="[('rent_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]" widget="product_configurator"/>
-                                    <field name="product_template_id" string="Product" invisible="1" attrs="{                                           'readonly': [('product_updatable', '=', False)],                                           'required': [('display_type', '=', False)],                                       }" options="{'no_open': True}" context="{                                           'partner_id': parent.partner_id,                                           'quantity': product_uom_qty,                                           'pricelist': parent.pricelist_id,                                           'uom':product_uom,                                           'company_id': parent.company_id,                                           'default_lst_price': price_unit,                                           'default_description_sale': name                                       }" domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]" widget="product_configurator"/>
+                                    <field name="product_template_id" string="Product" invisible="1" attrs="{                                           'readonly': [('product_updatable', '=', False)],                                           'required': [('display_type', '=', False)],                                       }" 
+                                    options="{'no_open': True,'rent':True}" 
+                                    context="{
+                    'partner_id': parent.partner_id,
+                    'quantity': product_uom_qty,
+                    'pricelist': parent.pricelist_id,
+                    'uom':product_uom,
+                    'company_id': parent.company_id,
+                    'default_lst_price': price_unit,
+                    'default_description_sale': name,
+                    'default_rent_ok': 1,
+                    'rental_products': True,
+                }" domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]" widget="product_configurator"/>
                                     <field name="name" widget="section_and_note_text" optional="show"/>
                                     <field name="analytic_tag_ids" optional="hide" groups="analytic.group_analytic_tags" widget="many2many_tags" options="{'color_field': 'color'}" domain="['|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"/>
                                     <field name="product_uom_qty" context="{                                             'partner_id': parent.partner_id,                                             'quantity': product_uom_qty,                                             'pricelist': parent.pricelist_id,                                             'uom': product_uom,                                             'company_id': parent.company_id                                         }"/>
