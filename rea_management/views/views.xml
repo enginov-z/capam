@@ -68,8 +68,12 @@
                                 </div>
                                 <div name="tags"/>
                                 <ul>
-                                    <li>Etat d'aujourd'hui: <field name="today_state" /></li>
-                                     <li>Date de Disponibilité: <field name="next_free_dtae" /></li>
+                                    <li>Etat d'aujourd'hui: 
+                                    <t t-if="record.today_state == 'l' "><span style="color:green;"><b><field name="today_state" /></b></span></t>
+                                    <t t-if="record.today_state == 'o'"><span style="color:red;"><b><field name="today_state" /></b></span></t>
+                                    <t t-if="record.today_state == 'r'"><span style="color:black;"><b><field name="today_state" /></b></span></t>
+                                    </li>
+                                     <li>Date de Disponibilité: <b><field name="next_free_dtae" /></b></li>
                                      <field name="lst_price" invisible="1" />
                                 </ul>
                                 <div name="tags"/>
