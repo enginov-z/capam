@@ -61,9 +61,8 @@ class ResPartnerInherit(models.Model):
     _inherit="res.partner"
 
     def get_default_company(self):
-        raise UserWarning(self.env.user.company_id.name)
         self.x_studio_current_company_2 =  self.env.user.company_id.name
-    x_studio_current_company_2 = fields.Char('bla bla bla')
+    x_studio_current_company_2 = fields.Char('bla bla bla', compute=get_default_company)
 
     
 
