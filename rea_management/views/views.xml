@@ -1,7 +1,16 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
- 
+ <record model="ir.ui.view" id="rea_management.inherit_sale_prim_view">
+      <field name="name">sake search affectations inherit</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale_renting.rental_order_primary_form_view" />
+      <field name="arch" type="xml">
+      </field>
+      <xpath expr="//attribute[@name='domain']" position="replace">
+<attribute name="domain">['|', ('rent_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]</attribute>
+      </xpath>
+      </record>
    <record model="ir.ui.view" id="rea_management.inherit_sale_search_view">
       <field name="name">sake search affectations inherit</field>
       <field name="model">sale.order</field>
