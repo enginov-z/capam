@@ -61,7 +61,7 @@ class ResPartnerInherit(models.Model):
     _inherit="res.partner"
     def get_default_company(self):
         self.x_studio_current_company_2 = self.env.company.id
-    x_studio_current_company_2 = fields.Many2one('res.company', compute=get_default_company)
+    x_studio_current_company_2 = fields.Many2one('res.company', compute=get_default_company, store=True)
 
     
 
