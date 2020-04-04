@@ -52,7 +52,7 @@ class ProductTemplateInherit(models.Model):
             'view_id': 1144,
             'res_model': 'sale.order',
             'type': 'ir.actions.act_window',
-            'target': 'new',
+            'target': 'current',
             
         }
 
