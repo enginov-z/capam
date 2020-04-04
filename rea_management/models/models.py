@@ -32,8 +32,15 @@ class ProductTemplateInherit(models.Model):
         return True
 
     def open_create_affectation(self):
-        raise UserWarning('Reserver')
-        return True
+        return {
+            'xml_id':339, 
+            'name': _('Créer affectation'),
+            'view_mode': 'form',
+            'res_model': 'sale.order',
+            'type': 'ir.actions.act_window',
+            'target': 'new',
+            
+        }
 
 
 
