@@ -6,22 +6,15 @@ import datetime
 class SaleOrderInherit(models.Model):
     _inherit="sale.order"
 
-    rental_status = fields.Selection(selection=[
-        ('draft', 'Bruillon'),
-        ('sent', 'Quotation Sent'),
+    x_rental_status = fields.Selection(selection=[
+        ('draft', 'Brouillon'),
+        ('sent', 'A Confirmer'),
         ('pickup', 'Reservé'),
         ('return', 'Picked-up'),
         ('returned', 'Libre'),
         ('cancel', 'Annulé'),
     ], string="Etat des affectations")
-    state = fields.Selection(selection=[
-        ('draft', 'Bruillon'),
-        ('sent', 'Quotation Sent'),
-        ('pickup', 'Reservé'),
-        ('return', 'Picked-up'),
-        ('returned', 'Libre'),
-        ('cancel', 'Annulé'),
-    ], string="Etat des affectations")
+
 
 class ProductTemplateInherit(models.Model):
     _inherit="product.template"
