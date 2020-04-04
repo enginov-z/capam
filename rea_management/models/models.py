@@ -49,6 +49,7 @@ class ProductTemplateInherit(models.Model):
             'xml_id':339, 
             'name': 'Créer affectation',
             'view_mode': 'form',
+            'view_id': 1144,
             'res_model': 'sale.order',
             'type': 'ir.actions.act_window',
             'target': 'new',
