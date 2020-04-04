@@ -31,9 +31,10 @@ class ProductTemplateInherit(models.Model):
         #get actual state
         pickup_this_date = self.env['sale.order.line'].search(
             [('product_tmpl_id','=',self.id)
-            ,('is_rental','='True)
+            ,('is_rental','=',True)
             ,('pickup_date','<=',datetime.datetime.today())
-            ,('return_date','>=',datetime.datetime.today())])
+            ,('return_date','>=',datetime.datetime.today())
+            ])
         if len(pickup_this_date > 0 ):
             self.today_state = 'o'
             self.next_free_dtae = pickup_this_date.return_date
