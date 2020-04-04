@@ -64,11 +64,11 @@ class ResPartnerInherit(models.Model):
         self.x_studio_current_company_2 = self.env.company.id
         if self.company_name.id == self.x_studio_current_company_2
             self.update({
-                'x_studio_current_company_temp' : True
+                'x_studio_current_company_bool' : True
             })
         else:
             self.update({
-                'x_studio_current_company_temp' : True
+                'x_studio_current_company_bool' : True
             })
     x_studio_current_company_2 = fields.Many2one('res.company', compute=get_default_company)
 
