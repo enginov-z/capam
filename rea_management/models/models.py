@@ -31,7 +31,7 @@ class ProductTemplateInherit(models.Model):
         #get actual state
         for x in self:
             pickup_this_date = self.env['sale.order.line'].search(
-                [('product_tmpl_id','=',x.id)
+                [('product_id.product_tmpl_id','=',x.id)
                 ,('is_rental','=',True)
                 ,('pickup_date','<=',datetime.datetime.today())
                 ,('return_date','>=',datetime.datetime.today())
