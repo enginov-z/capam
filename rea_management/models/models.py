@@ -52,6 +52,7 @@ class ProductTemplateInherit(models.Model):
             'view_id': 1144,
             'res_model': 'sale.order',
             'type': 'ir.actions.act_window',
+            'context': {'default_is_rental_order': 1, 'search_default_from_rental': 1},
             'target': 'current',
             
         }
