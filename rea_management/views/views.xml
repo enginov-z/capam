@@ -15,6 +15,20 @@
         </xpath>
       </field>
     </record>
+    <record model="ir.ui.view" id="rea_management.inherit_sale_view">
+      <field name="name">sake view affectations inherit</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='state']" position="replace">
+        <searchpanel>
+              <field name="state" invisible="1" widget="statusbar" statusbar_visible="draft,sent,sale"/>
+              <field name="x_rental_status" widget="statusbar" statusbar_visible="draft,sent,sale"/>
+           <!--  <field name="invoice_status" icon="fa-retweet"/> -->
+          </searchpanel>
+        </xpath>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
     <!--
