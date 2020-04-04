@@ -29,6 +29,7 @@ class ProductTemplateInherit(models.Model):
 
     def _get_daily_state(self):
         #get actual state
+        self.ensure_one()
         pickup_this_date = self.env['sale.order.line'].search(
             [('product_tmpl_id','=',self.id)
             ,('is_rental','=',True)
