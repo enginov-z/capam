@@ -62,8 +62,7 @@ class ResPartnerInherit(models.Model):
 
     @api.onchange('x_studio_date_de_naissance')
     def set_age(self):
-        raise UserWarning('i work ')
-        return 20
+        self.x_studio_age_1 = int((datetime.datetime.today() - self.x_studio_date_de_naissance) / 365)
 
 
 
