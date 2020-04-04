@@ -46,10 +46,10 @@ class ProductTemplateInherit(models.Model):
 
     def open_create_affectation(self):
         return {
-            'xml_id':339, 
+             
             'name': 'Créer affectation',
             'view_mode': 'form',
-            'view_id': 1144,
+            
             'res_model': 'sale.order',
             'type': 'ir.actions.act_window',
             'context': {'default_is_rental_order': 1, 'search_default_from_rental': 1},
