@@ -60,8 +60,7 @@ class ProductTemplateInherit(models.Model):
 class ResPartnerInherit(models.Model):
     _inherit="res.partner"
     def get_default_company(self):
-        raise UserWarning(self.env.company)
-        return self.env.user.company_id
+        self.x_studio_current_company_2 =  self.env.user.company_id.id
     x_studio_current_company_2 = fields.Many2one('res.partner', compute=get_default_company)
 
     
