@@ -41,9 +41,4 @@ class zone(models.Model):
 
     name = fields.Char('Nom')
 
-class ResCompanyInherit(models.Model):
-    _inherit="res.company"
 
-    departement = fields.Many2one('departement', string="Departement")
-    zone = fields.Many2one('zone',string="Zone")
-    
