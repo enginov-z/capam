@@ -31,8 +31,8 @@
         
               <button name="preview_sale_order" type="object" class="oe_stat_button" icon="fa-globe icon">
                             <div class="o_field_widget o_stat_info">
-                                <span class="o_stat_text">Patient</span>
                                 <span class="o_stat_text">Apercue</span>
+                                <span class="o_stat_text">Patient</span>
                             </div>
                         </button>
          
