@@ -34,6 +34,14 @@
         </xpath>
       </field>
     </record>
+    <record model="ir.ui.view" id="rea_management.inherit_sale_rproduct_kanban">
+      <field name="name">product saler kanban inherit</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="sale_renting.product_template_rental_kanban_view" />
+      <field name="arch" type="xml">
+      <xpath expr="//field[@name='lst_price']" position="replace">
+      </field>
+      </record>
     <record model="ir.ui.view" id="rea_management.inherit_product_kanban">
       <field name="name">product kanban inherit</field>
       <field name="model">product.template</field>
