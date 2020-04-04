@@ -22,7 +22,7 @@ class ProductTemplateInherit(models.Model):
         ('o', 'Occupé'),
         ('r', 'Reservé'),
        
-    ],compute="_get_daily_state", string="Etat d'aujourd'hui")
+    ],compute="_get_daily_state", string="Etat d'aujourd'hui", store=True)
     next_free_dtae = fields.Date('Date de Disponibilité')
 
     def _get_daily_state(self):
