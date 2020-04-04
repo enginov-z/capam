@@ -2,9 +2,9 @@
   <data>
     <!-- explicit list view definition -->
     <!--
-    <record model="ir.ui.view" id="rea_management.list">
-      <field name="name">rea_management list</field>
-      <field name="model">rea_management.rea_management</field>
+    <record model="ir.ui.view" id="my_module.list">
+      <field name="name">my_module list</field>
+      <field name="model">my_module.my_module</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -17,18 +17,18 @@
 
     <!-- actions opening views on models -->
     <!--
-    <record model="ir.actions.act_window" id="rea_management.action_window">
-      <field name="name">rea_management window</field>
-      <field name="res_model">rea_management.rea_management</field>
+    <record model="ir.actions.act_window" id="my_module.action_window">
+      <field name="name">my_module window</field>
+      <field name="res_model">my_module.my_module</field>
       <field name="view_mode">tree,form</field>
     </record>
     -->
 
     <!-- server action to the one above -->
     <!--
-    <record model="ir.actions.server" id="rea_management.action_server">
-      <field name="name">rea_management server</field>
-      <field name="model_id" ref="model_rea_management_rea_management"/>
+    <record model="ir.actions.server" id="my_module.action_server">
+      <field name="name">my_module server</field>
+      <field name="model_id" ref="model_my_module_my_module"/>
       <field name="state">code</field>
       <field name="code">
         action = {
@@ -42,19 +42,19 @@
 
     <!-- Top menu item -->
     <!--
-    <menuitem name="rea_management" id="rea_management.menu_root"/>
+    <menuitem name="my_module" id="my_module.menu_root"/>
     -->
     <!-- menu categories -->
     <!--
-    <menuitem name="Menu 1" id="rea_management.menu_1" parent="rea_management.menu_root"/>
-    <menuitem name="Menu 2" id="rea_management.menu_2" parent="rea_management.menu_root"/>
+    <menuitem name="Menu 1" id="my_module.menu_1" parent="my_module.menu_root"/>
+    <menuitem name="Menu 2" id="my_module.menu_2" parent="my_module.menu_root"/>
     -->
     <!-- actions -->
     <!--
-    <menuitem name="List" id="rea_management.menu_1_list" parent="rea_management.menu_1"
-              action="rea_management.action_window"/>
-    <menuitem name="Server to list" id="rea_management" parent="rea_management.menu_2"
-              action="rea_management.action_server"/>
+    <menuitem name="List" id="my_module.menu_1_list" parent="my_module.menu_1"
+              action="my_module.action_window"/>
+    <menuitem name="Server to list" id="my_module" parent="my_module.menu_2"
+              action="my_module.action_server"/>
     -->
   </data>
 </odoo>
