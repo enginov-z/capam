@@ -41,6 +41,8 @@
       <field name="arch" type="xml">
       <xpath expr="//field[@name='lst_price']" position="replace">
       </xpath>
+      <xpath expr="//field[@name='display_price']" position="replace">
+      </xpath>
       </field>
       </record>
     <record model="ir.ui.view" id="rea_management.inherit_product_kanban">
