@@ -36,7 +36,7 @@ class ProductTemplateInherit(models.Model):
                 ,('pickup_date','<=',datetime.datetime.today())
                 ,('return_date','>=',datetime.datetime.today())
                 ])
-            if len(pickup_this_date > 0 ):
+            if len(pickup_this_date) > 0 :
                 x.today_state = 'o'
                 x.next_free_dtae = pickup_this_date.return_date
             else:
