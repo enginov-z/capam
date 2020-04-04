@@ -1,0 +1,16 @@
+<odoo>
+<data noupdate="1">
+<record model="res.groups" id="medecin_group">
+            <field name="name">Medecin</field>
+
+        </record>
+        <record model="res.groups" id="infermier_group">
+            <field name="name">Inferimer</field>
+
+        </record>
+        <record model="res.groups" id="gestionnaire_group">
+            <field name="name">Gestionnaire</field>
+
+        </record>
+</data>
+</odoo>
