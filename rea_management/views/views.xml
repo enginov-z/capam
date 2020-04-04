@@ -69,9 +69,9 @@
                                 <div name="tags"/>
                                 <ul>
                                     <li>Etat d'aujourd'hui: 
-                                    <span style="color:green;"><b><field name="today_state" /></b></span>
-                                    <t t-if="record.today_state == 'o'"><span style="color:red;"><b><field name="today_state" /></b></span></t>
-                                    <t t-if="record.today_state == 'r'"><span style="color:black;"><b><field name="today_state" /></b></span></t>
+                                    <span style="color:green;" attrs="{'invisible':[('today_state','!=','l')]}"><b><field name="today_state" /></b></span>
+                                    <span style="color:red;" attrs="{'invisible':[('today_state','!=','o')]}"><b><field name="today_state" /></b></span>
+                                    <span style="color:black;" attrs="{'invisible':[('today_state','!=','r')]}"><b><field name="today_state" /></b></span>
                                     </li>
                                      <li>Date de Disponibilité: <b><field name="next_free_dtae" /></b></li>
                                      <field name="lst_price" invisible="1" />
