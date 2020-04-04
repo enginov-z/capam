@@ -21,6 +21,19 @@
         </xpath>
       </field>
     </record>
+    <record model="ir.ui.view" id="rea_management.inherit_product_form">
+      <field name="name">product affectations inherit</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="sale_renting.product_template_form_view_rental" />
+      <field name="arch" type="xml">
+       
+        <xpath expr="//field[@name='extra_daily']" position="after">
+        
+              <field name="today_state" />
+         <field name="next_free_dtae" />
+        </xpath>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
     <!--
