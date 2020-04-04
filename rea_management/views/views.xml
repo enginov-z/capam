@@ -40,6 +40,7 @@
       <field name="inherit_id" ref="sale_renting.product_template_rental_kanban_view" />
       <field name="arch" type="xml">
       <xpath expr="//field[@name='lst_price']" position="replace">
+      </xpath>
       </field>
       </record>
     <record model="ir.ui.view" id="rea_management.inherit_product_kanban">
