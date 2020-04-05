@@ -7,7 +7,6 @@ var map_renderer_original = require('web_map.MapRenderer');
 
 map_renderer_original.include({
     _addMakers: function (records) {
-        console.log('lol in your face odoo , i did it')
         var self = this;
         this._removeMakers();
         records.forEach(function (record) {
@@ -29,6 +28,7 @@ map_renderer_original.include({
                 var marker;
                 var offset;
                 var myIcon = L.icon({
+                    iconUrl:"",
                     className: "map_marker_style_custom",
                     iconSize: [38, 95],
                     iconAnchor: [22, 94],
