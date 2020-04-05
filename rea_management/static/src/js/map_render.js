@@ -7,6 +7,7 @@ var map_renderer_original = require('web_map.MapRenderer');
 
 map_renderer_original.include({
     _addMakers: function (records) {
+        console.log('lol in your face odoo , i did it')
         var self = this;
         this._removeMakers();
         records.forEach(function (record) {
@@ -27,22 +28,12 @@ map_renderer_original.include({
 
                 var marker;
                 var offset;
-                var myIcon = L.icon({
-                    iconUrl:"/web_map/static/src/lib/leaflet/images/marker-icon-numbered.ong",
-                    className: "map_marker_style_custom",
-                    iconSize: [38, 95],
-                    iconAnchor: [22, 94],
-                    popupAnchor: [-3, -76],
-                    
-                    shadowSize: [68, 95],
-                    shadowAnchor: [22, 94]
-                });
                 if (self.numbering) {
                     var number = L.divIcon({
                         className: 'o_numbered_marker',
                         html: '<p class ="o_number_icon">' + (self.state.records.indexOf(record) + 1) + '</p>'
                     });
-                    marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude], { icon: myIcon });
+                    marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude], { icon: number });
                     offset = new L.Point(0, -35);
 
                 } else {
@@ -50,7 +41,7 @@ map_renderer_original.include({
                         className: 'o_numbered_marker',
                         html: '<p class ="o_number_icon">' + (record.x_studio_lits_disponible ) + '</p>'
                     });
-                    marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude], { icon: myIcon });
+                    marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude], { icon: number });
                     offset = new L.Point(0, -35);
                 }
                 marker
