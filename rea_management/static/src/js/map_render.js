@@ -7,6 +7,7 @@ var map_renderer_original = require('web_map.MapRenderer');
 
 map_renderer_original.include({
     _addMakers: function (records) {
+        console.log('lol in your face odoo , i did it')
         var self = this;
         this._removeMakers();
         records.forEach(function (record) {
