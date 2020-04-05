@@ -28,7 +28,7 @@ map_renderer_original.include({
                 var marker;
                 var offset;
                 var myIcon = L.icon({
-                    iconUrl:"",
+                    iconUrl:"/web_map/static/src/lib/leaflet/images/marker-icon-numbered.ong",
                     className: "map_marker_style_custom",
                     iconSize: [38, 95],
                     iconAnchor: [22, 94],
