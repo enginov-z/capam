@@ -3,26 +3,26 @@
     width: 28px !important;
     margin-top: -45px !important;
     margin-left: -14px !important;
-    background-image: url(/rea_management/static/src/img/marker-blue.png);
+    background-image: url(/rea_management/static/src/img/marker-blue-little.png);
 }
 .o_map_view .map_marker_style_custom_red{
     height: 45px !important;
     width: 28px !important;
     margin-top: -45px !important;
     margin-left: -14px !important;
-    background-image: url(/rea_management/static/src/img/marker-red.png);
+    background-image: url(/rea_management/static/src/img/marker-red-little.png);
 }
 .o_map_view .map_marker_style_custom_green{
     height: 45px !important;
     width: 28px !important;
     margin-top: -45px !important;
     margin-left: -14px !important;
-    background-image: url(/rea_management/static/src/img/marker-green.png);
+    background-image: url(/rea_management/static/src/img/marker-green-little.png);
 }
 .o_map_view .map_marker_style_custom_yellow{
     height: 45px !important;
     width: 28px !important;
     margin-top: -45px !important;
     margin-left: -14px !important;
-    background-image: url(/rea_management/static/src/img/marker-yellow.png);
+    background-image: url(/rea_management/static/src/img/marker-yellow-little.png);
 }
