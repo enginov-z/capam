@@ -96,7 +96,7 @@ class ResCompanyInherit(models.Model):
     def get_available_beds(self):
         total_products = self.x_studio_lit_totals
         not_available_products = 0 
-        for x in self.x_studio_lit_totals:
+        for x in self.x_studio_field_keWp2:
             if x.pickup_date <= datetime.datetime.today() and x.return_date >= datetime.datetime.today():
                 not_available_products = not_available_products + 1 
         self.x_studio_available_beds_temp_1 = len(self.x_studio_field_keWp2) - not_available_products
