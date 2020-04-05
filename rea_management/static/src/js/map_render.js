@@ -1,4 +1,8 @@
 odoo.define('map_render_custom',function(require){
+    var core = require('web.core');
+    var AbstractRenderer = require('web.AbstractRenderer');
+    var field_utils = require('web.field_utils');
+    var qweb = core.qweb;
 var map_renderer_original = require('web_map.MapRenderer');
 
 map_renderer_original.include({
