@@ -89,7 +89,7 @@ class ResCompanyInherit(models.Model):
 
     def get_full_address(self):
         a = "bla bla "
-        return a
+        self.x_studio_contact_address_complete = a
 
     x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
