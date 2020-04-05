@@ -95,13 +95,15 @@ class ResCompanyInherit(models.Model):
 
     def get_available_beds(self):
         total_products = self.x_studio_lit_totals
-        not_available_products = 0
-        ids = []
-        for z in self.x_studio_field_keWp2:
-            ids.append(z.id)
-        product_templates = self.env['product.product'].search([('product_tmpl_id','in',ids)])
-        for x in product_templates:
-            if x.pickup_date <= datetime.datetime.today() and x.return_date >= datetime.datetime.today():
+        not_available_products = 0 
+        
+        for x in self.x_studio_field_keWp2:
+            if len(self.env['sale.order.line'].search(
+                [('product_id.product_tmpl_id','=',x.id)
+                ,('is_rental','=',True)
+                ,('pickup_date','<=',datetime.datetime.today())
+                ,('return_date','>=',datetime.datetime.today())
+                ])) >0:
                 not_available_products = not_available_products + 1 
         self.x_studio_available_beds_temp_1 = len(self.x_studio_field_keWp2) - not_available_products
         self.x_studio_lits_disponible = len(self.x_studio_field_keWp2) - not_available_products
