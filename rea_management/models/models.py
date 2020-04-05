@@ -94,8 +94,13 @@ class ResCompanyInherit(models.Model):
     x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
     def get_available_beds(self):
-        self.x_studio_available_beds_temp_1 = 5
-        self.x_studio_lits_disponible = 2
+        total_products = self.x_studio_lit_totals
+        not_available_products = 0 
+        for x in self.x_studio_lit_totals:
+            if x.pickup_date <= datetime.datetime.today() and x.return_date >= datetime.datetime.today():
+                not_available_products = not_available_products + 1 
+        self.x_studio_available_beds_temp_1 = len(self.x_studio_field_keWp2) - not_available_products
+        self.x_studio_lits_disponible = len(self.x_studio_field_keWp2) - not_available_products
 
     def get_total_beds(self):
         self.x_studio_total_beds_temp = len(self.x_studio_field_keWp2)
