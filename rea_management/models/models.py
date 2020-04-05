@@ -25,6 +25,7 @@ class ProductTemplateInherit(models.Model):
         ('r', 'Reservé'),
        
     ],compute="_get_daily_state", string="Etat d'aujourd'hui")
+    today_state_real = fields.Char("Etat d'aujourd'hui ")
     next_free_dtae = fields.Char('Date de Disponibilité')
 
     def _get_daily_state(self):
@@ -38,9 +39,11 @@ class ProductTemplateInherit(models.Model):
                 ])
             if len(pickup_this_date) > 0 :
                 x.today_state = 'o'
+                x.today_state_real = 'Occupé'
                 x.next_free_dtae = pickup_this_date.return_date
             else:
                 x.today_state = 'l'
+                x.today_state_real = 'Libre'
                 x.next_free_dtae = datetime.datetime.strftime(datetime.datetime.today(), "%d/%m/%Y")
         return True
 
