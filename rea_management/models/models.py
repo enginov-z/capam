@@ -88,9 +88,9 @@ class ResCompanyInherit(models.Model):
     _inherit="res.company"
 
     def _get_full_address(self):
-        raise UserWarning('i work')
+        return True
 
-    x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=_get_full_address)
+    x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
 
 
