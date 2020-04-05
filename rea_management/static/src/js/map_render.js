@@ -30,13 +30,13 @@ map_renderer_original.include({
                 var offset;
                 var classNamee = "map_marker_style_custom_green"
                 if ((record.x_studio_lits_disponible < (0.5 * record.x_studio_lit_totals)) && (record.x_studio_lits_disponible > (0.25 * record.x_studio_lit_totals))) {
-                    classNamee = map_marker_style_custom_yellow
+                    classNamee = "map_marker_style_custom_yellow"
                 };
                 if (record.x_studio_lits_disponible < (0.25 * record.x_studio_lit_totals)) {
-                    classNamee = map_marker_style_custom_blue
+                    classNamee = "map_marker_style_custom_blue"
                 };
                 if (record.x_studio_lits_disponible == 0 ) {
-                    classNamee = map_marker_style_custom_red
+                    classNamee = "map_marker_style_custom_red"
                 };
                 if (self.numbering) {
                     var number = L.divIcon({
