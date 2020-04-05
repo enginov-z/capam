@@ -44,7 +44,7 @@ class ProductTemplateInherit(models.Model):
             else:
                 x.today_state = 'l'
                 x.today_state_real = 'Libre'
-                x.next_free_dtae = datetime.datetime.strftime(datetime.datetime.today(), "%d/%m/%Y")
+                x.next_free_dtae = datetime.datetime.strftime(datetime.datetime.today(), "%Y/%m/%d")
         return True
 
     def open_create_affectation(self):
