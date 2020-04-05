@@ -90,7 +90,7 @@ class ResCompanyInherit(models.Model):
     def get_full_address(self):
         return True
 
-    x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
+    x_studio_contact_address_complete = fields.Char('Contact adress complete', default=get_full_address)
 
 
 
