@@ -90,8 +90,9 @@ class ResCompanyInherit(models.Model):
     def get_full_address(self):
         a = "{0} {1} {2}".format(self.street,self.zip, self.city , self.country_id.name)
         self.x_studio_contact_address_complete = a
+        self.x_studio_contact_address_complete_temp = a
 
-    x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address, store=True)
+    x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
 
 
