@@ -1,12 +1,28 @@
-.map_marker_style_custom{
-    background-color: red;
-  width: 3rem;
-  height: 3rem;
-  display: block;
-  left: -1.5rem;
-  top: -1.5rem;
-  position: relative;
-  border-radius: 3rem 3rem 0;
-  transform: rotate(45deg);
-  border: 1px solid #FFFFFF;
+.map_marker_style_custom_blue{
+    height: 45px !important;
+    width: 28px !important;
+    margin-top: -45px !important;
+    margin-left: -14px !important;
+    background-image: url(/rea_management/static/src/img/marker-blue.png);
+}
+.map_marker_style_custom_red{
+    height: 45px !important;
+    width: 28px !important;
+    margin-top: -45px !important;
+    margin-left: -14px !important;
+    background-image: url(/rea_management/static/src/img/marker-red.png);
+}
+.map_marker_style_custom_green{
+    height: 45px !important;
+    width: 28px !important;
+    margin-top: -45px !important;
+    margin-left: -14px !important;
+    background-image: url(/rea_management/static/src/img/marker-green.png);
+}
+.map_marker_style_custom_yellow{
+    height: 45px !important;
+    width: 28px !important;
+    margin-top: -45px !important;
+    margin-left: -14px !important;
+    background-image: url(/rea_management/static/src/img/marker-yellow.png);
 }

@@ -31,7 +31,7 @@ map_renderer_original.include({
 
                 if (self.numbering) {
                     var number = L.divIcon({
-                        className: 'o_numbered_marker',
+                        className: 'map_marker_style_custom_blue',
                         html: '<p class ="o_number_icon">' + (self.state.records.indexOf(record) + 1) + '</p>',
                         
                     });
@@ -40,9 +40,9 @@ map_renderer_original.include({
 
                 } else {
                     var number = L.divIcon({
-                        className: 'o_numbered_marker',
+                        className: 'map_marker_style_custom_blue',
                         html: '<p class ="o_number_icon">' + (record.x_studio_lits_disponible ) + '</p>',
-                        iconUrl: '/rea_management/static/src/img/marker-blue.png',
+                        
                     });
                     marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude], { icon: number });
                     offset = new L.Point(0, -35);
