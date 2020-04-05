@@ -28,10 +28,19 @@ map_renderer_original.include({
 
                 var marker;
                 var offset;
-
+                var classNamee = "map_marker_style_custom_green"
+                if ((record.x_studio_lits_disponible < (0.5 * record.x_studio_lit_totals)) && (record.x_studio_lits_disponible > (0.25 * record.x_studio_lit_totals))) {
+                    classNamee = map_marker_style_custom_yellow
+                };
+                if (record.x_studio_lits_disponible < (0.25 * record.x_studio_lit_totals)) {
+                    classNamee = map_marker_style_custom_blue
+                };
+                if (record.x_studio_lits_disponible == 0 ) {
+                    classNamee = map_marker_style_custom_red
+                };
                 if (self.numbering) {
                     var number = L.divIcon({
-                        className: 'map_marker_style_custom_blue',
+                        className: classNamee,
                         html: '<p class ="o_number_icon">' + (self.state.records.indexOf(record) + 1) + '</p>',
                         
                     });
@@ -40,7 +49,7 @@ map_renderer_original.include({
 
                 } else {
                     var number = L.divIcon({
-                        className: 'map_marker_style_custom_blue',
+                        className: classNamee,
                         html: '<p class ="o_number_icon">' + (record.x_studio_lits_disponible ) + '</p>',
                         
                     });
