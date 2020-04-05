@@ -86,11 +86,14 @@ class ResPartnerInherit(models.Model):
 
 class ResCompanyInherit(models.Model):
     _inherit="res.company"
+    
+    @api.depend('street')
+    def _get_full_address(self):
+        self.update({
+            "x_studio_contact_address_complete": self.street + " " + str(self.zip) + " " + self.city + " " self.country_id.name
+        })
 
-    def get_full_address(self):
-        return True
-
-    x_studio_contact_address_complete = fields.Char('Contact adress complete', default=get_full_address)
+    x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=_get_full_address)
 
 
 
