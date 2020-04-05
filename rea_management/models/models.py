@@ -88,7 +88,7 @@ class ResCompanyInherit(models.Model):
     _inherit="res.company"
 
     def get_full_address(self):
-        a = "bla bla "
+        a = "{0} {1} {2}".format(self.street,self.zip, self.city , self.country_id.name)
         self.x_studio_contact_address_complete = a
 
     x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
