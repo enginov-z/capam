@@ -95,8 +95,11 @@ class ResCompanyInherit(models.Model):
 
     def get_available_beds(self):
         total_products = self.x_studio_lit_totals
-        not_available_products = 0 
-        product_templates = self.env['product.product'].search([('product_tmpl_id','in',self.x_studio_field_keWp2)])
+        not_available_products = 0
+        ids = []
+        for z in self.x_studio_field_keWp2:
+            ids.append(z.id)
+        product_templates = self.env['product.product'].search([('product_tmpl_id','in',ids)])
         for x in product_templates:
             if x.pickup_date <= datetime.datetime.today() and x.return_date >= datetime.datetime.today():
                 not_available_products = not_available_products + 1 
