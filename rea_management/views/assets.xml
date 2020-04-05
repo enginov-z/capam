@@ -1,4 +1,4 @@
-<data name="map assets" inherit_id="web.assets_backend">
+<data name="map assets custom" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
            
             <link rel="text/javascript" src="/rea_management/static/src/js/map_render.js" />
