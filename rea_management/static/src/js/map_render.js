@@ -37,13 +37,11 @@ map_renderer_original.include({
                     offset = new L.Point(0, -35);
 
                 } else {
-                    marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude]);
-                    offset = new L.Point(0, 0);
                     var number = L.divIcon({
                         className: 'o_numbered_marker',
                         html: '<p class ="o_number_icon">' + (self.state.records.indexOf(record) + 1) + '</p>'
                     });
-                    marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude], { icon: record.x_studio_lits_disponible });
+                    marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude], { icon: number });
                     offset = new L.Point(0, -35);
                 }
                 marker
