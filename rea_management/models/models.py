@@ -26,7 +26,7 @@ class ProductTemplateInherit(models.Model):
        
     ],compute="_get_daily_state", string="Etat d'aujourd'hui")
     today_state_real = fields.Char("Etat d'aujourd'hui ")
-    next_free_dtae = fields.Char('Date de Disponibilité')
+    next_free_dtae = fields.Date('Date de Disponibilité')
 
     def _get_daily_state(self):
         #get actual state
