@@ -93,6 +93,17 @@ class ResCompanyInherit(models.Model):
 
     x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
+    def get_available_beds(self):
+        self.x_studio_available_beds_temp_1 = 5
+        self.x_studio_lits_disponible = 5
+
+    def get_total_beds(self):
+        self.x_studio_total_beds_temp = len(self.x_studio_field_keWp2)
+        self.x_studio_lit_totals = len(self.x_studio_field_keWp2)
+        
+    x_studio_available_beds_temp_1 = fields.Integer('Lits Disponible', compute=get_available_beds)
+    x_studio_total_beds_temp = fields.Integer('Lits totale', compute=get_total_beds)
+
 
 
 
