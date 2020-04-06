@@ -27,7 +27,6 @@
         'security/groups.xml',
         'views/views.xml',
         'views/templates.xml',
-        'static/src/xml/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
