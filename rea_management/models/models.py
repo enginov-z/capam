@@ -149,7 +149,7 @@ class WizardRangeAvailability(models.TransientModel):
                 ,('is_rental','=',True)
                 ,('pickup_date','<=',x)
                 ,('return_date','>=',x)])) > 0 :
-                occupied = occupied + 1 
+                    occupied = occupied + 1 
                 else :
                     free = free + 1 
             self.env['report.range.availability'].create({
