@@ -165,8 +165,10 @@ class respartnerinherit(models.Model):
 class rentalwizardinherit(models.Model):
     _inherit="rental.wizard"
 
+    @api.model
     def get_return_date(self):
     self.pickup_date = datetime.datetime.today() + datetime.timedelta(days=10)
+    @api.model
     def get_pickup_date(self):
         self.pickup_date = datetime.datetime.today() + datetime.timedelta(days=10)
 
