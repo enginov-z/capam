@@ -162,6 +162,16 @@ class respartnerinherit(models.Model):
     _inherit="res.partner"
     _rec_name="name"
 
+class rentalwizardinherit(models.Model):
+    _inherit="rental.wizard"
+
+    def get_return_date(self):
+    self.pickup_date = datetime.datetime.today() + datetime.timedelta(days=10)
+    def get_pickup_date(self):
+        self.pickup_date = datetime.datetime.today() + datetime.timedelta(days=10)
+
+    return_date = fields.Datetime("Date retour", default=get_return_date)
+    pickup_date = fields.Datetime("Date Reservation", default=get_pickup_date)
 
 
         
