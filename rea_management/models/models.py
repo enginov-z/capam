@@ -165,12 +165,13 @@ class respartnerinherit(models.Model):
 class rentalwizardinherit(models.Model):
     _inherit="rental.wizard"
 
-    @api.model
+    @api.onchange('pickup_date')
     def get_return_date(self):
-    self.pickup_date = datetime.datetime.today() + datetime.timedelta(days=10)
-    @api.model
+        raise UserWarning('it works')
+        self.return_date = datetime.datetime.today() + datetime.timedelta(days=10)
+    
     def get_pickup_date(self):
-        self.pickup_date = datetime.datetime.today() + datetime.timedelta(days=10)
+        self.pickup_date = datetime.datetime.today()
 
     return_date = fields.Datetime("Date retour", default=get_return_date)
     pickup_date = fields.Datetime("Date Reservation", default=get_pickup_date)
