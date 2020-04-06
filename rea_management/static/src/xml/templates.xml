@@ -1,4 +1,5 @@
 <?xml version ="1.0" encoding="UTF-8"?>
+<odoo>
 <templates id="template" xml:space="preserve">
     <t t-name="map-popup">
         <table class="o_map_popup_table">
@@ -73,3 +74,4 @@
         </t>
     </t>
 </templates>
+<odoo>
