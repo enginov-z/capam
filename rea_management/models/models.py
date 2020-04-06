@@ -148,7 +148,7 @@ class WizardRangeAvailability(models.TransientModel):
                 if len(self.env['sale.order.line'].search([('product_id.product_tmpl_id','=',y.id)
                 ,('is_rental','=',True)
                 ,('pickup_date','<=',x)
-                ,('return_date','>=',x)]) > 0 :
+                ,('return_date','>=',x)])) > 0 :
                 occupied = occupied + 1 
                 else :
                     free = free + 1 
