@@ -41,7 +41,7 @@
          
         </xpath>
         <xpath expr="//field[@name='partner_id']" position="replace">
-                  <field name="partner_id" string="Patient" domain="[('is_company','=',False)]" />
+                  <field name="partner_id" string="Nom Patient" domain="[('is_company','=',False)]" />
         </xpath>
         <xpath expr="//field[@name='user_id']" position="replace">
         
