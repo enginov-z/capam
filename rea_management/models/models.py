@@ -118,7 +118,7 @@ class ResCompanyInherit(models.Model):
     x_studio_available_beds_temp_1 = fields.Integer('Lits Disponible', compute=get_available_beds)
     x_studio_total_beds_temp = fields.Integer('Lits totale', compute=get_total_beds)
 
-class ReportRangeAvailability(models.TransientModel):
+class ReportRangeAvailability(models.Model):
     _name = "report.range.availability"
     _description = "Beds availability"
 
@@ -126,7 +126,7 @@ class ReportRangeAvailability(models.TransientModel):
     free_beds = fields.Integer('Lits disponible')
     occupied_beds = fields.Integer('Lits occupé')
 
-class WizardRangeAvailability(models.TransientModel):
+class WizardRangeAvailability(models.Model):
     _name="wizard.range.availability"
 
     date_from = fields.Date("Date debut")
