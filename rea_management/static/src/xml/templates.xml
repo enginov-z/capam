@@ -1,5 +1,4 @@
 <?xml version ="1.0" encoding="UTF-8"?>
-<odoo>
 <templates id="template" xml:space="preserve">
     <t t-name="map-popup">
         <table class="o_map_popup_table">
@@ -24,7 +23,7 @@
         </table>
         <br/>
         <div class="center">
-            <button class ="btn btn-primary edit">bla bla </button>
+            <button class ="btn btn-primary edit">edit</button>
             <div class="divider"/>
             <a class="btn btn-primary" style="color:white" t-att-href="records.url" target="_blank">navigate to</a>
         </div>
@@ -74,4 +73,3 @@
         </t>
     </t>
 </templates>
-</odoo>
