@@ -118,6 +118,50 @@ class ResCompanyInherit(models.Model):
     x_studio_available_beds_temp_1 = fields.Integer('Lits Disponible', compute=get_available_beds)
     x_studio_total_beds_temp = fields.Integer('Lits totale', compute=get_total_beds)
 
+class ReportRangeAvailability(models.TransientModel):
+    _name = "report.range.availability"
+    _description = "Beds availability"
+
+    dat = fields.Date('Date')
+    free_beds = fields.Integer('Lits disponible')
+    occupied_beds = fields.Integer('Lits occupé')
+
+class WizardRangeAvailability(models.TransientModel):
+    _name="wizard.range.availability"
+
+    date_from = fields.Date("Date debut")
+    date_to = fields.Date("Date jusqu'a")
+
+
+    def return_interface(self):
+        for x in self.env['report.range.availability'].search([]):
+            x.unlink()
+        d1 = self.date_from
+        d2 = self.date_to
+        c = 0
+        r = (d2-d1).days + 1 
+        date_list = [d1 + timedelta(days=c) for c in range(0, r)]
+        for x in date_list:
+            occupied = 0 
+            free = 0 
+            for y in self.env['product.template'].search([('company_id','=',self.env.company.id)]):
+                if len(self.env['sale.order.line'].search([('product_id.product_tmpl_id','=',y.id)
+                ,('is_rental','=',True)
+                ,('pickup_date','<=',x)
+                ,('return_date','>=',x])) > 0 :
+                occupied = occupied + 1 
+                else :
+                    free = free + 1 
+            self.env['report.range.availability'].create({
+                'dat':x,
+                'free_beds':free,
+                'occupied_beds': occupied
+            })
+
+class respartnerinherit(models.Model):
+    _inherit="res.partner"
+    _rec_name="name"
 
 
 
+        

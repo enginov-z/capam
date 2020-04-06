@@ -338,47 +338,45 @@
         </xpath>
       </field>
     </record>
+<record model="ir.ui.view" id="rea_management.wizard_form">
+            <field name="name">report availability</field>
+            <field name="model">wizard.range.availability</field>
+            <field name="arch" type="xml">
+                <form>
 
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="my_module.action_window">
-      <field name="name">my_module window</field>
-      <field name="res_model">my_module.my_module</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
+                    <group col="2">
+                        <group>
+                            <field name="date_from"/>
+                        </group>
+                        <group>
+                            <field name="date_to"/>
+                        </group>
+                        
 
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="my_module.action_server">
-      <field name="name">my_module server</field>
-      <field name="model_id" ref="model_my_module_my_module"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
+                    </group>
+                    
+                    <footer >
+<button type="object" string="confirm" name="return_interface" />
+                    </footer>
 
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="my_module" id="my_module.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="my_module.menu_1" parent="my_module.menu_root"/>
-    <menuitem name="Menu 2" id="my_module.menu_2" parent="my_module.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="my_module.menu_1_list" parent="my_module.menu_1"
-              action="my_module.action_window"/>
-    <menuitem name="Server to list" id="my_module" parent="my_module.menu_2"
-              action="my_module.action_server"/>
-    -->
+
+
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window"
+                id="rea_management.report_availability_actw">
+            <field name="name">Etat des lits</field>
+            <field name="res_model">wizard.range.availability</field>
+            <field name="view_id" ref="rea_management.wizard_form"/>
+
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem name="Tableaux de bord" id="rea_management.menu_report"
+                  action="rea_management.report_availability_actw"
+                  
+                  />
   </data>
 </odoo>
