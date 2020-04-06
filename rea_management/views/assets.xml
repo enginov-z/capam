@@ -1,6 +1,6 @@
 <data name="map assets custom" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
-           <link rel="stylesheet" type="text/scss" href="/rea_management/static/src/css/map_style.css"/>
+           <link rel="stylesheet" type="text/scss" href="/rea_management/static/src/css/map_style.css"/>   
             <script type="text/javascript" src="/rea_management/static/src/js/map_render.js" />
         </xpath>
     </data>
