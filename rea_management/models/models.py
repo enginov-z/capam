@@ -15,7 +15,7 @@ class SaleOrderInherit(models.Model):
         ('cancel', 'Annulé'),
     ], string="Etat des affectations")
 
-    @api.constrains('order_line'):
+    @api.onchange('order_line'):
     def control_prod(self):
         for x in self.order_line:
             len(self.env['sale.order.line'].search([('product_id','=',x.product_line.id)
