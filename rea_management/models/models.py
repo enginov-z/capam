@@ -15,6 +15,15 @@ class SaleOrderInherit(models.Model):
         ('cancel', 'Annulé'),
     ], string="Etat des affectations")
 
+    @api.constrains('order_line'):
+    def control_prod(self):
+        for x in self.order_line:
+            len(self.env['sale.order.line'].search([('product_id','=',x.product_line.id)
+                    ,('is_rental','=',True)
+                    ,('pickup_date','<=',x.product_line.pickup_date)
+                    ,('return_date','>=',x.product_line.pickup_date)])) > 0:
+                    raise UserWarning('Error , product already affected in this date')
+
 
 class ProductTemplateInherit(models.Model):
     _inherit="product.template"
@@ -175,16 +184,9 @@ class rentalwizardinherit(models.Model):
 
     return_date = fields.Datetime("Date retour", default=get_return_date)
     pickup_date = fields.Datetime("Date Reservation", default=get_pickup_date)
-class saleorderline(models.Model):
-    _inherit="sale.order.line"
 
-    @api.constrains('product_id'):
-    def control_prod(self):
-        len(self.env['sale.order.line'].search([('product_id','=',self.id)
-                ,('is_rental','=',True)
-                ,('pickup_date','<=',self.pickup_date)
-                ,('return_date','>=',self.pickup_date)])) > 0:
-                raise UserWarning('Error , product already affected in this date')
+
+    
 
 
         
