@@ -13,7 +13,7 @@ class SaleOrderInherit(models.Model):
         ('return', 'A retourné'),
         ('returned', 'Libre'),
         ('cancel', 'Annulé'),
-    ], string="Etat des affectations")
+    ], string="Etat des affectations") 
 
     @api.onchange('order_line'):
     def control_prod(self):
