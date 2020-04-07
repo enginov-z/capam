@@ -67,12 +67,10 @@ class ResPartnerInherit(models.Model):
     _inherit="res.partner"
 
     def get_default_company(self):
-        raise UserError('i work')
         company_id = self.env['res.company'].search([('name','=',self.company_name)])
-        self.x_studio_current_company_2_1 = company_id.id
-        self = self.with_context({
-'test': 'test_value',
-})
+        self.update({
+            'x_studio_current_company_2_1' : company_id.id
+        })
         if self.company_name == self.x_studio_current_company_2_1.name:
             self.update({
                 'x_studio_current_company_bool' : True
