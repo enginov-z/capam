@@ -103,6 +103,7 @@ class ResCompanyInherit(models.Model):
 
     x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
+    @api.onchange('x_studio_field_keWp2_1')
     def get_available_beds(self):
         total_products = self.x_studio_lit_totals
         not_available_products = 0 
@@ -120,6 +121,7 @@ class ResCompanyInherit(models.Model):
             'x_studio_lits_disponible' : len(self.x_studio_field_keWp2_1) - not_available_products
         })
 
+    @api.onchange('x_studio_field_keWp2_1')
     def get_total_beds(self):
         self.x_studio_total_beds_temp_1 = len(self.x_studio_field_keWp2_1)
         self.update({
