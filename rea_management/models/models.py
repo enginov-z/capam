@@ -102,28 +102,28 @@ class ResCompanyInherit(models.Model):
 
     x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
-    def get_available_beds(self):
-        total_products = self.x_studio_lit_totals
-        not_available_products = 0 
+    #def get_available_beds(self):
+    #    total_products = self.x_studio_lit_totals
+    #    not_available_products = 0 
         
-        for x in self.x_studio_field_keWp2:
-            if len(self.env['sale.order.line'].search(
-                [('product_id.product_tmpl_id','=',x.id)
-                ,('is_rental','=',True)
-                ,('pickup_date','<=',datetime.datetime.today())
-                ,('return_date','>=',datetime.datetime.today())
-                ])) >0:
-                not_available_products = not_available_products + 1 
-        self.x_studio_available_beds_temp_1 = len(self.x_studio_field_keWp2) - not_available_products
-        self.update({
-            'x_studio_lits_disponible' : len(self.x_studio_field_keWp2) - not_available_products
-        })
+    #    for x in self.x_studio_field_keWp2:
+    #        if len(self.env['sale.order.line'].search(
+    #            [('product_id.product_tmpl_id','=',x.id)
+    #            ,('is_rental','=',True)
+    #            ,('pickup_date','<=',datetime.datetime.today())
+    #            ,('return_date','>=',datetime.datetime.today())
+    #            ])) >0:
+    #            not_available_products = not_available_products + 1 
+    #   self.x_studio_available_beds_temp_1 = len(self.x_studio_field_keWp2) - not_available_products
+    #    self.update({
+    #        'x_studio_lits_disponible' : len(self.x_studio_field_keWp2) - not_available_products
+    #    })
 
-    def get_total_beds(self):
-        self.x_studio_total_beds_temp = len(self.x_studio_field_keWp2)
-        self.update({
-            'x_studio_lit_totals' : len(self.x_studio_field_keWp2)
-        })
+    #def get_total_beds(self):
+    #    self.x_studio_total_beds_temp = len(self.x_studio_field_keWp2)
+    #    self.update({
+    #        'x_studio_lit_totals' : len(self.x_studio_field_keWp2)
+    #    })
         
     x_studio_available_beds_temp_1 = fields.Integer('Lits Disponible', compute=get_available_beds)
     x_studio_total_beds_temp = fields.Integer('Lits totale', compute=get_total_beds)
