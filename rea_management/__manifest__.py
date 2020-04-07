@@ -34,6 +34,7 @@
         'demo/demo.xml',
     ],
     'qweb':[
+        "static/src/xml/templates.xml",
         "static/src/xml/templates.xml"
     ],
 }
