@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
- <template id="template_custom" inherit_id="web_map.map-popup" xml:space="preserve">
+ <template id="template_custom" inherit_id="web_map.map-popup" >
 <xpath expr="//div[@calss='divider']" position="after">
 <button class ="btn btn-primary explore">explorer</button>
             <div class="divider"/>
