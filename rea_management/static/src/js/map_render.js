@@ -7,7 +7,6 @@ var map_renderer_original = require('web_map.MapRenderer');
 
 map_renderer_original.include({
     _addMakers: function (records) {
-        console.log('lol in your face odoo , i did it')
         var self = this;
         this._removeMakers();
         records.forEach(function (record) {
@@ -29,7 +28,6 @@ map_renderer_original.include({
                 var marker;
                 var offset;
                 var classNamee = "map_marker_style_custom_green"
-                console.log('im here')
                 if ((record.x_studio_lits_disponible < (0.5 * record.x_studio_lit_totals)) && (record.x_studio_lits_disponible > (0.25 * record.x_studio_lit_totals))) {
                     classNamee = "map_marker_style_custom_yellow"
                 };
