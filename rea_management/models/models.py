@@ -119,7 +119,7 @@ class ResCompanyInherit(models.Model):
     def get_total_beds(self):
         self.x_studio_total_beds_temp_1 = len(self.x_studio_field_keWp2_1)
         self.update({
-            'x_studio_lit_totals' : len(self.x_studio_total_beds_temp_1)
+            'x_studio_lit_totals' : self.x_studio_total_beds_temp_1
         })
         
     x_studio_available_beds_temp_1_1 = fields.Integer('Lits Disponible', compute=get_available_beds)
