@@ -27,9 +27,13 @@
         'security/groups.xml',
         'views/views.xml',
         'views/templates.xml',
+        'views/assets.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
+    ],
+    'qweb':[
+        "static/src/xml/templates.xml"
     ],
 }

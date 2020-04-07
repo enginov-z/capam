@@ -337,7 +337,7 @@
     </record>
 <record model="ir.ui.view" id="rea_management.wizard_form">
             <field name="name">report availability</field>
-            <field name="model">wizard.range.availability</field>
+            <field name="model">wizard.range.availability1</field>
             <field name="arch" type="xml">
                 <form>
 
@@ -364,7 +364,7 @@
         <record model="ir.actions.act_window"
                 id="rea_management.report_availability_actw">
             <field name="name">Etat des lits</field>
-            <field name="res_model">wizard.range.availability</field>
+            <field name="res_model">wizard.range.availability1</field>
             <field name="view_id" ref="rea_management.wizard_form"/>
 
             

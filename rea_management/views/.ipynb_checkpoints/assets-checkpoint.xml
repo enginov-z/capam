@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <template id="inherit_assets" inherit_id="web.assets_backend"><xpath expr="." position="inside">
+          <!-- <link rel="stylesheet" type="text/scss" href="/rea_management/static/src/css/map_style.css"/>   
+            <script type="text/javascript" src="/rea_management/static/src/js/map_render.js" />-->
+           
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.5/dist/chartjs-plugin-zoom.min.js"></script>
+            <script type="text/javascript" src="/rea_management/static/src/js/histo_interface.js" />
+        </xpath>
+        </template>
+    </data>
+</odoo>
