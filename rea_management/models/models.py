@@ -68,11 +68,11 @@ class ResPartnerInherit(models.Model):
 
     def get_default_company(self):
         company_id = self.env['res.company'].search([('name','=',self.company_name)])
-        self.x_studio_current_company_2 = company_id.id
+        self.x_studio_current_company_2_1 = company_id.id
         self = self.with_context({
 'test': 'test_value',
 })
-        if self.company_name == self.x_studio_current_company_2.name:
+        if self.company_name == self.x_studio_current_company_2_1.name:
             self.update({
                 'x_studio_current_company_bool' : True
             })
@@ -80,7 +80,7 @@ class ResPartnerInherit(models.Model):
             self.update({
                 'x_studio_current_company_bool' : False
             })
-    x_studio_current_company_2 = fields.Many2one('res.company', compute=get_default_company)
+    x_studio_current_company_2_1 = fields.Many2one('res.company', compute=get_default_company)
 
 
     
