@@ -103,6 +103,7 @@ class ResCompanyInherit(models.Model):
     x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
     def get_available_beds(self):
+        raise UserError('i work')
         total_products = self.x_studio_lit_totals
         not_available_products = 0 
         
