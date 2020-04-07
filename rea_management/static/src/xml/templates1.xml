@@ -23,7 +23,7 @@
         </table>
         <br/>
         <div class="center">
-            <button class ="btn btn-primary edit">edit</button>
+            <button class ="btn btn-primary edit">Modifier</button>
             <div class="divider"/>
             <a class="btn btn-primary" style="color:white" t-att-href="records.url" target="_blank">navigate to</a>
         </div>
