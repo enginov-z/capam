@@ -67,6 +67,7 @@ class ResPartnerInherit(models.Model):
     _inherit="res.partner"
 
     def get_default_company(self):
+        raise UserError('i work')
         company_id = self.env['res.company'].search([('name','=',self.company_name)])
         self.x_studio_current_company_2_1 = company_id.id
         self = self.with_context({
@@ -87,6 +88,7 @@ class ResPartnerInherit(models.Model):
 
     @api.onchange('x_studio_date_de_naissance')
     def set_age(self):
+        raise UserError('i work naiss')
         if self.x_studio_date_de_naissance:
             self.x_studio_age_1 = int((datetime.datetime.today().date() - self.x_studio_date_de_naissance).days / 365)
 
