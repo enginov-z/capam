@@ -1,4 +1,10 @@
 <?xml version ="1.0" encoding="UTF-8"?>
+<templates id="template_custom" inherit_id="web_map.map-popup" xml:space="preserve">
+<xpath expr="//div[@calss='divider']" position="after">
+<button class ="btn btn-primary explore">explorer</button>
+            <div class="divider"/>
+</xpath>
+</templates>
 <templates id="template" xml:space="preserve">
     <t t-name="HistView.main">
        <div class="row" style="background-color:white;">
