@@ -114,7 +114,7 @@ class ResCompanyInherit(models.Model):
                 ,('return_date','>=',datetime.datetime.today())
                 ])) >0:
                 not_available_products = not_available_products + 1 
-       self.x_studio_available_beds_temp_1_1 = len(self.x_studio_field_keWp2_1) - not_available_products
+        self.x_studio_available_beds_temp_1_1 = len(self.x_studio_field_keWp2_1) - not_available_products
         self.update({
             'x_studio_lits_disponible' : len(self.x_studio_field_keWp2_1) - not_available_products
         })
