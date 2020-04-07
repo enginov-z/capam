@@ -27,8 +27,10 @@ map_renderer_original.include({
 
                 var marker;
                 var offset;
-                console.log(record,record.name,record.x_studio_lit_totals,record.x_studio_lits_disponible,record.x_studio_available_beds_temp_1_1,record.x_studio_total_beds_temp_1)
-                var classNamee = "map_marker_style_custom_green"
+                    var classNamee = "map_marker_style_custom_green"
+                if ((record.x_studio_lits_disponible == 0.5 * record.x_studio_lit_totals))  {
+                    classNamee = "map_marker_style_custom_yellow"
+                };
                 if ((record.x_studio_lits_disponible < (0.5 * record.x_studio_lit_totals)) && (record.x_studio_lits_disponible > (0.25 * record.x_studio_lit_totals))) {
                     classNamee = "map_marker_style_custom_yellow"
                 };
