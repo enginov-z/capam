@@ -27,6 +27,7 @@ map_renderer_original.include({
 
                 var marker;
                 var offset;
+                console.log(record.name)
                 var classNamee = "map_marker_style_custom_green"
                 if ((record.x_studio_lits_disponible < (0.5 * record.x_studio_lit_totals)) && (record.x_studio_lits_disponible > (0.25 * record.x_studio_lit_totals))) {
                     classNamee = "map_marker_style_custom_yellow"
