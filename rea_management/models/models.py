@@ -127,7 +127,7 @@ class ResCompanyInherit(models.Model):
         })
         
     x_studio_available_beds_temp_1_1 = fields.Integer('Lits Disponible', compute=get_available_beds)
-    x_studio_total_beds_temp_1 = fields.Integer('Lits totale',, compute=get_total_beds)
+    x_studio_total_beds_temp_1 = fields.Integer('Lits totale', compute=get_total_beds)
 
 class ReportRangeAvailability(models.Model):
     _name = "report.range.availability1"
