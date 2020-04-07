@@ -94,16 +94,12 @@ class ResCompanyInherit(models.Model):
     _inherit="res.company"
 
     def get_full_address(self):
-        try:
-            a = "{0},{1},{2},{3}".format(self.street,self.zip, self.city , self.country_id.name)
-            self.x_studio_contact_address_complete = a
-        except:
-            pass
+        a = "{0},{1},{2},{3}".format(self.street,self.zip, self.city , self.country_id.name)
+        self.x_studio_contact_address_complete = a
 
     x_studio_contact_address_complete = fields.Char('Contact adress complete', compute=get_full_address)
 
     def get_available_beds(self):
-        raise UserError('i work')
         total_products = self.x_studio_lit_totals
         not_available_products = 0 
         
