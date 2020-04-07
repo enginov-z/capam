@@ -86,10 +86,11 @@ class ResPartnerInherit(models.Model):
 
     @api.onchange('x_studio_date_de_naissance')
     def set_age(self):
-        raise UserError('i work naiss')
-        if self.x_studio_date_de_naissance:
-            self.x_studio_age_1 = int((datetime.datetime.today().date() - self.x_studio_date_de_naissance).days / 365)
 
+        if self.x_studio_date_de_naissance:
+            self.update({
+                'x_studio_age_1' : int((datetime.datetime.today().date() - self.x_studio_date_de_naissance).days / 365)
+            })
 class ResCompanyInherit(models.Model):
     _inherit="res.company"
 
