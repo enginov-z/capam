@@ -23,6 +23,14 @@ map_controller_original.include({
             model: this.modelName
         });
     },
+    _onOpenExplore: function (ev) {
+        this.trigger_up('switch_view', {
+            view_type: 'form',
+            res_id: ev.data.id,
+            mode: 'readonly',
+            model: this.modelName
+        });
+    },
     _onGetItineraryClicked: function (ev) {
         window.open('https://www.google.com/maps/dir/?api=1&destination=' + ev.data.lat + ',' + ev.data.lon);
     },
