@@ -189,9 +189,11 @@ var myChart = new Chart(ctx, {
         </table>
         <br/>
         <div class="center">
-            <button class ="btn btn-primary edit">editee</button>
+            <button class ="btn btn-primary edit">Modifier</button>
             <div class="divider"/>
-            <a class="btn btn-primary" style="color:white" t-att-href="records.url" target="_blank">navigate to</a>
+            <button class ="btn btn-primary explore">Explorer</button>
+            <div class="divider"/>
+            <a class="btn btn-primary" style="color:white" t-att-href="records.url" target="_blank">Naviger ver</a>
         </div>
     </t>
     <t t-name="MapView.buttons">
