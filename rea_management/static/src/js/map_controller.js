@@ -25,8 +25,11 @@ map_controller_original.include({
     },
     _onOpenExplore: function (ev) {
         this.do_action({
-            "sale_renting.rental_product_template_action"
+            type: 'ir.actions.act_window',
+            res_model: 'product.template',
             
+            views: [[false, 'kanban']],
+            target: 'current',
         });
     },
     _onGetItineraryClicked: function (ev) {
