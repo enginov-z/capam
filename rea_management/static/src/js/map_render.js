@@ -37,10 +37,7 @@ map_renderer_original.include({
                 var marker;
                 var offset;
                     var classNamee = "map_marker_style_custom_green"
-                if ((record.x_studio_lits_disponible == 0.5 * record.x_studio_lit_totals))  {
-                    classNamee = "map_marker_style_custom_yellow"
-                };
-                if ((record.x_studio_lits_disponible < (0.5 * record.x_studio_lit_totals)) && (record.x_studio_lits_disponible > (0.25 * record.x_studio_lit_totals))) {
+                if ((record.x_studio_lits_disponible < (0.75 * record.x_studio_lit_totals)) && (record.x_studio_lits_disponible > (0.25 * record.x_studio_lit_totals))) {
                     classNamee = "map_marker_style_custom_yellow"
                 };
                 if (record.x_studio_lits_disponible < (0.25 * record.x_studio_lit_totals)) {
