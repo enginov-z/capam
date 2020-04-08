@@ -26,3 +26,9 @@
     margin-left: -14px !important;
     background-image: url(/rea_management/static/src/img/marker-yellow-little1.png);
 }
+.o_map_view .o_number_icon1 {
+    color: black;
+    /* font-size: 19px; */
+    text-align: center;
+    margin-top: 10%;
+}

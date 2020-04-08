@@ -52,7 +52,7 @@ map_renderer_original.include({
                 } else {
                     var number = L.divIcon({
                         className: classNamee,
-                        html: '<p class ="o_number_icon">' + (record.x_studio_lits_disponible ) + '</p>',
+                        html: '<p class ="o_number_icon1">' + (record.x_studio_lits_disponible ) + '</p>',
                         
                     });
                     marker = L.marker([record.partner.partner_latitude, record.partner.partner_longitude], { icon: number });
