@@ -255,7 +255,7 @@ var occ222 = [];
 		};  
 
 var myChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'bar',
     data: {
         labels: occ1,
         datasets: [{
