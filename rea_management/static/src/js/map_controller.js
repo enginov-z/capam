@@ -24,12 +24,6 @@ map_controller_original.include({
         });
     },
     _onOpenExplore: function (ev) {
-        this.trigger_up('switch_view', {
-            view_type: 'kanban',
-            
-            mode: 'readonly',
-            model: 'product.template'
-        });
         this.do_action({
             name: "Lits",
             type: 'ir.actions.act_window',
