@@ -27,7 +27,7 @@ map_renderer_original.include({
                 }
                 if (self.hasFormView) {
                     openButton1.onclick = function () {
-                        self.trigger_up('open_clicked',
+                        self.trigger_up('open_explore',
                             { id: record.id });
                     };
                 } else {
