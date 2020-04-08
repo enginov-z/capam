@@ -191,7 +191,7 @@ var myChart = new Chart(ctx, {
         <div class="center">
             <button class ="btn btn-primary edit">Modifier</button>
             <div class="divider"/>
-            <button class ="btn btn-primary explore">Explorer</button>
+            <button class ="btn btn-primary explore">Réserver</button>
             <div class="divider"/>
             <a class="btn btn-primary" style="color:white" t-att-href="records.url" target="_blank">Naviger ver</a>
         </div>

@@ -25,10 +25,10 @@ map_controller_original.include({
     },
     _onOpenExplore: function (ev) {
         this.trigger_up('switch_view', {
-            view_type: 'form',
-            res_id: ev.data.id,
+            view_type: 'kanban',
+            
             mode: 'readonly',
-            model: this.modelName
+            model: 'product.template'
         });
     },
     _onGetItineraryClicked: function (ev) {
