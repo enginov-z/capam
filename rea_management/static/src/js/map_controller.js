@@ -25,11 +25,7 @@ map_controller_original.include({
     },
     _onOpenExplore: function (ev) {
         this.do_action({
-            name: "Lits",
-            type: 'ir.actions.act_window',
-            res_model: "product.template",
-            target: 'current',
-            view_mode: "kanban,form,tree",
+            "sale_renting.rental_product_template_action"
             
         });
     },
