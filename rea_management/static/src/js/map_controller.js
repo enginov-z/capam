@@ -30,6 +30,14 @@ map_controller_original.include({
             mode: 'readonly',
             model: 'product.template'
         });
+        this.do_action({
+            name: "Lits",
+            type: 'ir.actions.act_window',
+            res_model: "product.template",
+            target: 'current',
+            view_mode: "kanban,form,tree",
+            
+        });
     },
     _onGetItineraryClicked: function (ev) {
         window.open('https://www.google.com/maps/dir/?api=1&destination=' + ev.data.lat + ',' + ev.data.lon);
