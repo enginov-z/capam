@@ -27,7 +27,7 @@ map_controller_original.include({
         this.do_action({
             type: 'ir.actions.act_window',
             res_model: 'product.template',
-            
+            name:"Reserver",
             views: [[false, 'kanban']],
             target: 'current',
         });
