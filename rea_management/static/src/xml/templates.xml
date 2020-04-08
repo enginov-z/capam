@@ -2,8 +2,11 @@
 <templates id="template" xml:space="preserve">
     <t t-name="HistView.main">
        <div class="row" style="background-color:white;">
-          
-           <div class="col-6" style="position: relative; height:40vh; width:80vw">
+           <div class="col-2">
+           
+               <span><t t-esc="self"/> </span>
+        </div>
+           <div class="col-8" style="position: relative; height:40vh; width:80vw">
            <canvas id="myChart" ></canvas>
            <script>
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -159,162 +162,7 @@ var myChart = new Chart(ctx, {
                }
 });
 </script></div>
-           <div class="col-6">
-           <canvas id="myChart1" ></canvas>
-           <script>
-var ctx = document.getElementById('myChart1').getContext('2d');
-               var data = []
-
-    var s = 'https://' + window.location.hostname + '/rea_management/hospitals_ocupied'
-    d = $.ajax({
-        type: "GET", //rest Type
-        dataType: 'jsonp', //mispelled
-        url: s,
-        async: false,
-
-        success: function (msg) {
-            console.log(this.responseText);
-        }
-    }).responseText
-               
-               var a = [];
-               a = JSON.parse(d)
-               
-               
-var occ1 = [];
-var occ2 = [];
-               v = ""
-               
-               for (const property in a) {
-           v =     a[property].name
-  occ1.push( v)
-};
-               for (const property in a) {
-                v =     a[property].occ
-  occ2.push( v)
-}
-
-var s1 = 'https://' + window.location.hostname + '/rea_management/hospitals_free'
-    d1 = $.ajax({
-        type: "GET", //rest Type
-        dataType: 'jsonp', //mispelled
-        url: s1,
-        async: false,
-
-        success: function (msg) {
-            console.log(this.responseText);
-        }
-    }).responseText
-               
-               var a1 = [];
-               a1 = JSON.parse(d1)
-              
-               
-var occ11 = [];
-var occ22 = [];
-               v = ""
-              
-               for (const property in a1) {
-           v =     a1[property].name
-  occ11.push( v)
-};
-               for (const property in a1) {
-                v =     a1[property].free
-  occ22.push( v)
-} 
-var s2 = 'https://' + window.location.hostname + '/rea_management/hospitals_total'
-    d2 = $.ajax({
-        type: "GET", //rest Type
-        dataType: 'jsonp', //mispelled
-        url: s2,
-        async: false,
-
-        success: function (msg) {
-            console.log(this.responseText);
-        }
-    }).responseText
-               
-               var a2 = [];
-               a2 = JSON.parse(d2)
-              
-               
-var occ112 = [];
-var occ222 = [];
-               v = ""
-              
-               for (const property in a2) {
-           v =     a2[property].name
-  occ11.push( v)
-};
-               for (const property in a2) {
-                v =     a2[property].tot
-  occ222.push( v)
-} 
-  var dragOptions = {
-			animationDuration: 1000
-		};  
-
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: occ1,
-        datasets: [{
-            label: 'Occupé',
-            data: occ2,
-               backgroundColor:'rgb(255, 0, 0)',
-            borderWidth: 2
-        },{
-            label: 'Disponible',
-            data: occ22,
-            // this dataset is drawn below
-            backgroundColor:'rgb(0, 255, 0)',
-               borderWidth: 3
-        },
-		{
-            label: 'Capacité totale',
-            data: occ222,
-            // this dataset is drawn below
-            backgroundColor:'rgb(0, 0, 255)',
-               borderWidth: 1
-        }
-    ],
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true,
-               maxTicksLimit:10
-                }
-            }]
-        }
-               
-    },
-               plugins: {
-            zoom: {
-                // Container for pan options
-                pan: {
-                    // Boolean to enable panning
-                    enabled: true,
-
-                    // Panning directions. Remove the appropriate direction to disable 
-                    // Eg. 'y' would only allow panning in the y direction
-                    mode: 'xy'
-                },
-
-                // Container for zoom options
-                zoom: {
-                    // Boolean to enable zooming
-                    enabled: true,
-
-                    // Zooming directions. Remove the appropriate direction to disable 
-                    // Eg. 'y' would only allow zooming in the y direction
-                    mode: 'xy',
-                }
-            }
-        }
-               }
-});
-</script></div>
+           <div class="col-2"></div>
            
         </div>
     </t>
