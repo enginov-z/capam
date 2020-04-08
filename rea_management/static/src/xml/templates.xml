@@ -166,7 +166,7 @@ var myChart = new Chart(ctx, {
            
         </div>
     </t>
-        <t t-name="map-popup">
+        <t t-name="map-popup1">
         <table class="o_map_popup_table">
             <thead>
                 <tr>
