@@ -108,20 +108,20 @@ var myChart = new Chart(ctx, {
         datasets: [{
             label: 'Occupé',
             data: occ2,
-               backgroundColor:'rgb(255, 99, 222)',
+               backgroundColor:'rgb(255, 0, 0)',
             borderWidth: 2
         },{
             label: 'Disponible',
             data: occ22,
             // this dataset is drawn below
-            backgroundColor:'rgb(255, 99, 150)',
+            backgroundColor:'rgb(0, 255, 0)',
                borderWidth: 3
         },
 		{
             label: 'Capacité totale',
             data: occ222,
             // this dataset is drawn below
-            backgroundColor:'rgb(255, 99, 111)',
+            backgroundColor:'rgb(0, 0, 255)',
                borderWidth: 1
         }
     ],
