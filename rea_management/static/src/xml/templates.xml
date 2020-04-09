@@ -192,7 +192,7 @@ var occ2 = [];
                for (const property in a) {
                 v =     a[property].occupied
   occ2.push( v)
-}
+};
 
 var s1 = 'https://' + window.location.hostname + '/rea_management/hospitals_general_availability_free'
     d1 = $.ajax({
@@ -221,21 +221,23 @@ var occ22 = [];
                for (const property in a1) {
                 v =     a1[property].free
   occ22.push( v)
-} 
+} ;
   var dragOptions = {
 			animationDuration: 1000
 		};  
 
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
         labels: occ1,
-        datasets: [{
+        datasets: [
+		{
             label: 'Occupé',
             data: occ2,
                backgroundColor:'rgb(255, 0, 0)',
             borderWidth: 2
-        },{
+        },
+		{
             label: 'Disponible',
             data: occ22,
             // this dataset is drawn below
@@ -245,7 +247,8 @@ var myChart = new Chart(ctx, {
     ],
     options: {
         scales: {
-            yAxes: [{
+            yAxes: [
+			{
                 ticks: {
                     beginAtZero: true,
                maxTicksLimit:10
