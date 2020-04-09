@@ -229,7 +229,7 @@ var occ22 = [];
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: occ1,
+        labels: ["Occupé","Disponible"],
         datasets: [
 		{
             label: 'Occupé',
