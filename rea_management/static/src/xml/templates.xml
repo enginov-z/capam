@@ -270,7 +270,7 @@ var myChart = new Chart(ctx, {
                     </td>
                     <td class ="space"></td>
                     <td class="contentString">
-                        <t t-esc="record.field"/>
+                        <b><t t-esc="record.field"/></b>
                     </td>
                 </tr>
             </tbody>
