@@ -32,19 +32,33 @@ class MyModule(http.Controller):
             })
         return http.request.make_response(json.dumps(l), [('Content-Type', 'application/json')])
  
-    @http.route('/rea_management/hospitals_general_availability/', type='http', auth='public')
+    @http.route('/rea_management/hospitals_general_availability_free/', type='http', auth='public')
     def index3(self, **kw):
         l=[]
         free = 0
         occupied = 0 
         for x in http.request.env['res.company'].search([]):
-            occupied += (x.x_studio_lit_totals -  x.x_studio_lits_disponible)
+            #occupied += (x.x_studio_lit_totals -  x.x_studio_lits_disponible)
             free += x.x_studio_lits_disponible
         l.append({
                 'free':free,
-                'occupied':free
+                
             })
         return http.request.make_response(json.dumps(l), [('Content-Type', 'application/json')])
+
+
+    @http.route('/rea_management/hospitals_general_availability_occ/', type='http', auth='public')
+    def index4(self, **kw):
+        l=[]
+        free = 0
+        occupied = 0 
+        for x in http.request.env['res.company'].search([]):
+            occupied += (x.x_studio_lit_totals -  x.x_studio_lits_disponible)
+            #free += x.x_studio_lits_disponible
+        l.append({
+                
+                'occupied':free
+            })
 
 
 #     @http.route('/my_module/my_module/objects/', auth='public')
