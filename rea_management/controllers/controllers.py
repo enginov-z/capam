@@ -41,6 +41,7 @@ class MyModule(http.Controller):
             #occupied += (x.x_studio_lit_totals -  x.x_studio_lits_disponible)
             free += x.x_studio_lits_disponible
         l.append({
+            'name':'free',
                 'free':free,
                 
             })
@@ -56,8 +57,8 @@ class MyModule(http.Controller):
             occupied += (x.x_studio_lit_totals -  x.x_studio_lits_disponible)
             #free += x.x_studio_lits_disponible
         l.append({
-                
-                'occupied':free
+                'name':'occupied',
+                'occupied':occupied
             })
 
 
