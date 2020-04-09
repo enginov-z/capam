@@ -2,10 +2,7 @@
 <templates id="template" xml:space="preserve">
     <t t-name="HistView.main">
        <div class="row" style="background-color:white;">
-           <div class="col-2">
-           
-               <span><t t-esc="self"/> </span>
-        </div>
+          
            <div class="col-8" style="position: relative; height:40vh; width:80vw">
            <canvas id="myChart" ></canvas>
            <script>
@@ -162,8 +159,101 @@ var myChart = new Chart(ctx, {
                }
 });
 </script></div>
-           <div class="col-2"></div>
+            <div class="col-4">
            
+               <canvas id="myChart1" ></canvas>
+           <script>
+var ctx = document.getElementById('myChart1').getContext('2d');
+               var data = []
+
+    var s = 'https://' + window.location.hostname + '/rea_management/hospitals_general_availability'
+    d = $.ajax({
+        type: "GET", //rest Type
+        dataType: 'jsonp', //mispelled
+        url: s,
+        async: false,
+
+        success: function (msg) {
+            console.log(this.responseText);
+        }
+    }).responseText
+               
+               var a = [];
+               a = JSON.parse(d)
+               
+               
+var occ1 = [];
+var occ2 = [];
+               v = ""
+               
+               for (const property in a) {
+           v =     a[property].free
+  occ1.push( v)
+};
+               for (const property in a) {
+                v =     a[property].occupied
+  occ2.push( v)
+}
+
+
+  var dragOptions = {
+			animationDuration: 1000
+		};  
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      
+        datasets: [{
+            label: 'Occupé',
+            data: occ2,
+               backgroundColor:'rgb(255, 0, 0)',
+            borderWidth: 2
+        },{
+            label: 'Disponible',
+            data: occ22,
+            // this dataset is drawn below
+            backgroundColor:'rgb(0, 255, 0)',
+               borderWidth: 3
+        }
+    ],
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+               maxTicksLimit:10
+                }
+            }]
+        }
+               
+    },
+               plugins: {
+            zoom: {
+                // Container for pan options
+                pan: {
+                    // Boolean to enable panning
+                    enabled: true,
+
+                    // Panning directions. Remove the appropriate direction to disable 
+                    // Eg. 'y' would only allow panning in the y direction
+                    mode: 'xy'
+                },
+
+                // Container for zoom options
+                zoom: {
+                    // Boolean to enable zooming
+                    enabled: true,
+
+                    // Zooming directions. Remove the appropriate direction to disable 
+                    // Eg. 'y' would only allow zooming in the y direction
+                    mode: 'xy',
+                }
+            }
+        }
+               }
+});
+</script>
         </div>
     </t>
         <t t-name="map-popup1">
