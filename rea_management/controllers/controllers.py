@@ -60,6 +60,8 @@ class MyModule(http.Controller):
                 'name':'occupied',
                 'occupied':occupied
             })
+        return http.request.make_response(json.dumps(l), [('Content-Type', 'application/json')])
+
 
 
 #     @http.route('/my_module/my_module/objects/', auth='public')
