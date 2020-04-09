@@ -2,7 +2,7 @@
 <templates id="template" xml:space="preserve">
     <t t-name="HistView.main">
        <div class="row" style="background-color:white;">
-          
+           
            <div class="col-8" style="position: relative; height:40vh; width:80vw">
            <canvas id="myChart" ></canvas>
            <script>
@@ -158,15 +158,14 @@ var myChart = new Chart(ctx, {
         }
                }
 });
-</script>
-</div>
-            <div class="col-4">
-                          <canvas id="myChart1" ></canvas>
+</script></div>
+           <div class="col-4">
+             <canvas id="myChart1" ></canvas>
            <script>
-           var ctx = document.getElementById('myChart1').getContext('2d');
+var ctx = document.getElementById('myChart1').getContext('2d');
                var data = []
 
-    var s = 'https://' + window.location.hostname + '/rea_management/hospitals_general_availability_free'
+    var s = 'https://' + window.location.hostname + '/rea_management/hospitals_general_availability_occ'
     d = $.ajax({
         type: "GET", //rest Type
         dataType: 'jsonp', //mispelled
@@ -191,11 +190,11 @@ var occ2 = [];
   occ1.push( v)
 };
                for (const property in a) {
-                v =     a[property].free
+                v =     a[property].occupied
   occ2.push( v)
 }
 
-var s1 = 'https://' + window.location.hostname + '/rea_management/hospitals_general_availability_occ'
+var s1 = 'https://' + window.location.hostname + '/rea_management/hospitals_general_availability_free'
     d1 = $.ajax({
         type: "GET", //rest Type
         dataType: 'jsonp', //mispelled
@@ -220,31 +219,29 @@ var occ22 = [];
   occ11.push( v)
 };
                for (const property in a1) {
-                v =     a1[property].occupied
+                v =     a1[property].free
   occ22.push( v)
 } 
-
   var dragOptions = {
 			animationDuration: 1000
 		};  
 
 var myChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'bar',
     data: {
         labels: occ1,
         datasets: [{
-            label: 'Disponible',
+            label: 'Occupé',
             data: occ2,
                backgroundColor:'rgb(255, 0, 0)',
             borderWidth: 2
         },{
-            label: 'Occupé',
+            label: 'Disponible',
             data: occ22,
             // this dataset is drawn below
             backgroundColor:'rgb(0, 255, 0)',
                borderWidth: 3
-        },
-		
+        }
     ],
     options: {
         scales: {
@@ -283,8 +280,8 @@ var myChart = new Chart(ctx, {
                }
 });
 </script>
-
-        </div>
+           </div>
+           
         </div>
     </t>
         <t t-name="map-popup1">
