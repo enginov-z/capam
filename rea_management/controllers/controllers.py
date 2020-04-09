@@ -38,7 +38,7 @@ class MyModule(http.Controller):
         free = 0
         occupied = 0 
         for x in http.request.env['res.company'].search([]):
-            occupied += (x.x_studio_lit_totals -  x.x_studio_lits_disponible=
+            occupied += (x.x_studio_lit_totals -  x.x_studio_lits_disponible)
             free += x.x_studio_lits_disponible
             l.append({
                 'free':free,
