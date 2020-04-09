@@ -229,22 +229,19 @@ var occ22 = [];
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ["Occupé","Disponible"],
-        datasets: [
-		{
-            label: 'Occupé',
-            data: occ2,
-               backgroundColor:'rgb(255, 0, 0)',
-            borderWidth: 2
-        },
-		{
-            label: 'Disponible',
-            data: occ22,
-            // this dataset is drawn below
-            backgroundColor:'rgb(0, 255, 0)',
-               borderWidth: 3
+        
+        datasets: [{
+            data:[ occ2,occ22
+            ],
+            backgroundColor: [
+						window.chartColors.red,
+						window.chartColors.blue,
+					]
         }
-    ],
+        ],
+        labels: ["Occupé","Disponible"]
+		
+    },
     options: {
         scales: {
             yAxes: [
